@@ -110,3 +110,11 @@ header ul{
     backdrop-filter: blur(6px);
     display: none;
 }
+@media(max-width: 500px){
+    .swiper-button-next,.swiper-button-prev{
+        transform: scale(0.5);
+    }
+    .swiper-button-prev::after,.swiper-button-next::after{
+        color: #ffffffde !important;
+    }
+}
