@@ -33,7 +33,9 @@ header ul{
     transform: rotate(-45deg);
     margin-top: 2px;
 }
-
+.hamburger-btn{
+    z-index: 3;
+}
 .swiper {
     width: 100%;
     max-height: 500px;
@@ -90,4 +92,21 @@ header ul{
     border-radius: 50%;
     background-color: black;
     margin: 4px;
+}
+.mobile-nav{
+    width: 80%;
+}
+.mobile-nav > .nav{
+    min-height: 250px !important;
+}
+.mobile-nav > .nav .nav-link{
+    transition: all 400ms;
+}
+.mobile-nav > .nav .nav-link:hover{
+    color: blue !important;
+    background-color: lightgrey;
+}
+.mobile-nav-container{
+    backdrop-filter: blur(6px);
+    display: none;
 }
