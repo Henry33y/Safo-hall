@@ -1,11 +1,14 @@
 *{
     box-sizing: border-box;
 }
+:root{
+    --safo-orange: #f15f23;
+}
 body{
     background-color: whitesmoke;
 }
 header{
-    background-color: rgb(234, 122, 81);
+    background-color: var(--safo-orange);
 }
 header ul{
     text-transform: uppercase;
@@ -110,6 +113,22 @@ header ul{
     backdrop-filter: blur(6px);
     display: none;
 }
+.logo-container{
+    width: 60px;
+    height: 60px;
+    border: 1px solid;
+}
+.hero-container{
+    
+}
+
+
+
+
+
+
+
+
 @media(max-width: 500px){
     .swiper-button-next,.swiper-button-prev{
         transform: scale(0.5);
