@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script defer src="register_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <title>Register</title>
 </head>
 <body class="min-vh-100 position-relative">
@@ -36,6 +37,7 @@
                     <label for="" class="form-label">Category</label>
                     <div>
                         <select name="" id="" class="form-select">
+                            <option value="default">Select Category</option>
                             <option value="undergraduate">Undergraduate</option>
                             <option value="abe">ABE</option>
                             <option value="ncce">NCCE</option>
@@ -74,6 +76,7 @@
                     <label for="" class="form-label">Level</label>
                     <div>
                         <select name="level" id="" class="form-select">
+                            <option value="default">Choose level</option>
                             <option value="100">100</option>
                             <option value="200">200</option>
                             <option value="300">300</option>
@@ -85,22 +88,66 @@
                     </div>
                 </div>
                 <div>
+                    <label for="" class="form-label">Contact</label>
+                    <div>
+                        <input name="contact" type="number" class="form-control">
+                    </div>
+                </div>
+                <div>
                     <label for="" class="form-label">Parent's name</label>
                     <div>
-                        <input name="programme" type="text" class="form-control">
+                        <input name="parent_name" type="text" class="form-control">
                     </div>
                 </div>
                 <div>
-                    <label for="" class="form-label">Parent's Contact</label>
+                    <label for="parent_contact" class="form-label">Parent's Contact</label>
                     <div>
-                        <input name="programme" type="text" class="form-control">
+                        <input name="parent_contact" id="parent_contact" type="text" class="form-control">
                     </div>
                 </div>
                 <div>
-                    <label for="" class="form-label">Are you under scholarship?</label>
+                    <label for="is_under_scholarship" class="form-label">Are you under scholarship?</label>
                     <div>
-                        <input name="programme" type="radio" class="">Yes <br>
-                        <input name="programme" type="radio" class="">No
+                        <input name="is_under_scholarship" type="radio" class="" id="under_scholarship" value="Yes">Yes<br>
+                        <input name="is_under_scholarship" type="radio" class="" id="not_under_scholarship" value="No">No
+                    </div>
+                </div>
+                <div>
+                    <div class="choose_scholarship_container">
+                        <label for="scholarship" class="form-label">Scholarship</label>
+                        <select name="scholarship" id="scholarship_select" class="form-select">
+                            <option value="default_scholarship">Choose Scholarship</option>
+                            <option value="Church Of Pentecost">Church of Pentecost</option>
+                            <option value="Pentecost University">Pentecost University</option>
+                            <option value="Get Fund">GET Fund</option>
+                            <option value="others">Others(Please Specify)</option>
+                        </select>
+                        <div class="" id="specify_scholarship_container">
+                            <label for="specified_scholarship">Specify Scholarship</label>
+                            <div>
+                                <input type="text" name="specified_scholarship" id="specified_scholarship" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="form-control btn btn-outline-primary" id="choose_room_btn" data-bs-toggle="modal" data-bs-target="#choose_room_modal_container">Choose Room</button>
+                </div>
+                <div id="choose_room_modal_container" class="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Choose Room</h3>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end mt-3">

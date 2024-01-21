@@ -3,6 +3,10 @@ const mobileNav = document.querySelector('.mobile-nav-container');
 
 hamburgerBtn.addEventListener('click',()=>{
     hamburgerBtn.classList.toggle('clicked');
+    toggleMobileNav()
+})
+
+function toggleMobileNav(){
     if(hamburgerBtn.classList.contains('clicked')){
         mobileNav.style.display = 'flex';
     }
@@ -10,4 +14,10 @@ hamburgerBtn.addEventListener('click',()=>{
         mobileNav.style.display = 'none';
 
     }
-})
+}
+
+
+
+
+
+

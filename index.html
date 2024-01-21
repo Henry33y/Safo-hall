@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -12,14 +15,19 @@
     <title>Safo Hall</title>
 </head>
 <body class="min-vh-100">
-    <header class="">
+    <header class="position-fixed w-100 top-0">
         <nav class="navbar py-0">
-            <div class="logo-container nav-item ms-4 text-white"><img class="img-fluid bg-white" src="assets/images/safo web logo.png" alt=""></div>
+            <div class="nav-item ms-sm-4 logo-container d-flex">
+                <div class="logo text-white">
+                    <img class="img-fluid" src="assets/images/safo web logo.png" alt="">
+                </div>
+                <span class="d-flex justify-content-center align-items-center text-dark logo-text">SAFO HALL</span>
+            </div>
             <ul class="nav d-none d-sm-flex">
-                <li class="nav-item"><a href="#" class="nav-link text-white">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link text-white">About Us</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-white">Activities/Events</a></li>
-                <li class="nav-item"><a href="register.html" class="nav-link text-white">Register</a></li>
+                <li class="nav-item"><a href="#" class="nav-link desktop-nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link desktop-nav-link">About Us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link desktop-nav-link">Activities/Events</a></li>
+                <li class="nav-item"><a href="register.php" class="nav-link desktop-nav-link rounded-pill">Register</a></li>
             </ul>
             <div class="btn d-flex flex-column gap-1 hamburger-btn d-sm-none border-0">
                 <div class="hambar hambar1"></div>
@@ -27,21 +35,38 @@
                 <div class="hambar hambar3"></div>
             </div>
         </nav>
-        <div class="mobile-nav-container d-sm-none position-fixed top-0 z-2 border w-100 h-100 justify-content-center">
+        <div class="mobile-nav-container d-sm-none position-fixed top-0 border w-100 justify-content-center">
             <nav class="pt-5 mt-3 mobile-nav">
                 <ul class="nav flex-column p-2 bg-white shadow-lg rounded-2">
                     <li class="nav-item"><a href="#" class="nav-link text-dark">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link text-dark">About Us</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-dark">Activities/Events</a></li>
-                    <li class="nav-item"><a href="register.html" class="nav-link text-dark">Register</a></li>
+                    <li class="nav-item"><a href="register.php" class="nav-link text-dark">Register</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <div class="hero-container">
-            <img class="img-fluid" src="assets/images/Artboard 1.jpg" alt="">
-        </div>
+        <section class="hero-container">
+            <img class="img-fluid" src="assets/images/Artboard 2.jpg" alt="">
+        </section>
+        <section class="about-section">
+            <div class="text-center">
+                <h2>ABOUT US</h2>
+                <div>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus porro enim maxime beatae quos minus harum possimus odit veritatis ut labore dolor, voluptatem sint, tempora quod! Recusandae eaque voluptas pariatur!
+                    Explicabo nostrum eligendi rerum odio quia voluptate animi eaque impedit inventore id expedita blanditiis minima, dicta exercitationem tempora nesciunt officiis fugiat repellendus quis ullam? Sunt omnis voluptatibus consequatur quis error.
+                    Aliquid corporis quod iure, facilis aliquam adipisci incidunt? Quibusdam fugiat voluptatem vero mollitia ut iste quaerat quis aliquam corrupti quia. Ut debitis ea deleniti! Quibusdam provident sequi eum esse odio.
+                    Officiis, recusandae quos eius, enim asperiores dolore aut cupiditate, aliquid laboriosam nulla fugiat odio! Doloribus ex quam amet enim, commodi a voluptatem, veniam fuga minus voluptas impedit, incidunt ullam neque.
+                    Eum labore aperiam dicta culpa, repudiandae voluptatum ipsum eaque atque nostrum voluptate est sunt cum mollitia a dolores quaerat nulla. Dignissimos sed nulla sit commodi quibusdam numquam ipsum, illum quisquam!
+                    Itaque sapiente dicta recusandae? Soluta, nesciunt harum est explicabo nisi ipsam aut, quo quos porro vel sapiente sequi deleniti mollitia! Tempore rerum minima esse sint, ipsam fuga voluptates voluptatibus quisquam?
+                    Corporis quae amet voluptate perspiciatis voluptatem inventore consequatur nulla, reiciendis culpa accusantium quidem eos harum magni cum, rerum soluta officia, eius corrupti in molestiae nostrum. Rerum magni nulla totam reprehenderit?
+                    Quaerat optio, qui quam illo excepturi quia nulla. Dolores nemo itaque, maiores beatae voluptas incidunt vitae inventore, magni eaque natus fugit veniam doloribus repellat voluptates iure fuga. Distinctio, accusamus? Architecto?
+                    Illum quia, beatae nisi, nihil eveniet natus magnam modi dolorum amet accusamus nemo recusandae maxime ratione fugiat aliquid, corporis cupiditate unde libero! Temporibus praesentium exercitationem ab! Perferendis iusto assumenda vitae?
+                    Perspiciatis delectus dolorem aliquam hic error maxime eaque doloremque nisi voluptatem dignissimos velit vitae minima quaerat, similique voluptatibus eum. Tenetur debitis quos voluptas, excepturi pariatur tempora deleniti sequi alias recusandae.
+                </div>
+            </div>
+        </section>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="assets/images/IMG-20231110-WA0029.jpg" alt=""></div>
