@@ -167,8 +167,16 @@ header ul{
 #specify_scholarship_container{
     display: none;
 }
-
-
+.specify_disability_container{
+    display: none;
+}
+.room-button{
+    width: 50px;
+}
+.room-button:focus{
+    background-color: var(--bs-primary);
+    color: white;
+}
 
 @media(max-width: 500px){
     .swiper-button-next,.swiper-button-prev{

@@ -1,12 +1,73 @@
+<?php
+require_once 'includes\db_conn.php';
+$firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $roomNumber = '';
+if(isset($_POST['submit'])){
+    if(!empty($_POST['first_name'])){
+        $firstName = $_POST['first_name'];
+    }
+    if(!empty($_POST['last_name'])){
+        $lastName = $_POST['last_name'];
+    }
+    if(!empty($_POST['student_id'])){
+        $studentId = $_POST['student_id'];
+    }
+    if(!empty($_POST['category'])){
+        $category = $_POST['category'];
+    }
+    if(!empty($_POST['programme'])){
+        $programme = $_POST['programme'];
+    }
+    if(!empty($_POST['level'])){
+        $level = $_POST['level'];
+    }
+    if(!empty($_POST['contact'])){
+        $contact = $_POST['contact'];
+    }
+    if(!empty($_POST['email'])){
+        $email = $_POST['email'];
+    }
+    if(!empty($_POST['parent_name'])){
+        $parentName = $_POST['parent_name'];
+    }
+    if(!empty($_POST['parent_contact'])){
+        $parentContact = $_POST['parent_contact'];
+    }
+    if(!empty($_POST['disability'])){
+        $disability = $_POST['disability'];
+    }
+    else{
+        $disability = 'None';
+    }
+    if($_POST['is_under_scholarship'] == 'Yes' && $_POST['scholarship'] != 'others'){
+        $scholarshipSpecify = $_POST['scholarship'];
+    }
+    else if($_POST['is_under_scholarship'] == 'No'){
+        $scholarshipSpecify = 'None';
+    }
+    else{
+        $scholarshipSpecify = $_POST['specified_scholarship'];
+    }
+    if(!empty($_POST['room_number'])){
+        $roomNumber = $_POST['room_number'];
+        echo $firstName.', Room Number = '.$roomNumber;
+    }
+
+    echo $firstName . $lastName . $studentId . $category . $level . $programme . $contact . $email . $parentName . $parentContact . $physicallyChallenged . $disability . $underScholarship . $scholarshipSpecify . $roomNumber;
+    
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <script defer src="register_script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Register</title>
 </head>
 <body class="min-vh-100 position-relative">
@@ -14,41 +75,45 @@
     <main class="pt-4">
         <h2 class="text-center">Register</h2>
         <div class="d-flex justify-content-center justify-content-center">
-            <form action="" method="post" id="register_form" class="form py-3 px-5 rounded-3 shadow-lg bg-white">
+            <form action="register.php" method="post" id="register_form" class="form py-3 px-5 rounded-3 shadow-lg bg-white needs-validation" novalidate>
                 <div>
-                    <label for="" class="form-label">First Name</label>
+                    <label for="first_name" class="form-label">First Name</label>
                     <div>
-                        <input type="text" class="form-control">
+                        <input type="text" name="first_name" id="first_name" class="form-control pe-5" required>
+                        <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
-                    <label for="" class="form-label">Last Name</label>
+                    <label for="last_name" class="form-label">Last Name</label>
                     <div>
-                        <input type="text" class="form-control">
+                        <input type="text" name="last_name" id="last_name" class="form-control" required>
+                        <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
-                    <label for="" class="form-label">Student ID</label>
+                    <label for="student_id" class="form-label">Student ID</label>
                     <div>
-                        <input type="text" class="form-control">
+                        <input type="text" name="student_id" id="student_id" class="form-control" required>
+                        <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
-                    <label for="" class="form-label">Category</label>
+                    <label for="category" class="form-label">Category</label>
                     <div>
-                        <select name="" id="" class="form-select">
-                            <option value="default">Select Category</option>
+                        <select name="category" id="category" class="form-select" required>
+                            <option selected disabled value="">Select Category</option>
                             <option value="undergraduate">Undergraduate</option>
                             <option value="abe">ABE</option>
                             <option value="ncce">NCCE</option>
                         </select>
+                        <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
                     <label for="programme" class="form-label">Programme</label>
                     <div>
-                        <select name="programme" type="text" class="form-select">
-                            <option value="default">Select Programme</option>
+                        <select name="programme" type="text" class="form-select" required>
+                            <option selected disabled value="">Select Programme</option>
                             <option value="B.Sc. Actuarial Science">B.Sc. Actuarial Science</option>
                             <option value="B.Sc. Quantity Surveying and Building Economics">B.Sc. Quantity Surveying and Building Economics</option>
                             <option value="B.A. Communication Studies">B.A. Communication Studies</option>
@@ -70,13 +135,14 @@
                             <option value="B.Sc. Information Technology">B.Sc. Information Technology</option>
                             <option value="B.Sc. Nursing">B.Sc. Nursing</option>
                         </select>
+                        <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
-                    <label for="" class="form-label">Level</label>
+                    <label for="level" class="form-label">Level</label>
                     <div>
-                        <select name="level" id="" class="form-select">
-                            <option value="default">Choose level</option>
+                        <select name="level" id="level" class="form-select" required>
+                            <option selected disabled value="">Choose level</option>
                             <option value="100">100</option>
                             <option value="200">200</option>
                             <option value="300">300</option>
@@ -85,43 +151,70 @@
                             <option value="400">5</option>
                             <option value="400">6</option>
                         </select>
+                        <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
-                    <label for="" class="form-label">Contact</label>
+                    <label for="contact" class="form-label">Contact</label>
                     <div>
-                        <input name="contact" type="number" class="form-control">
+                        <input name="contact" type="number" class="form-control" required>
+                        <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
-                    <label for="" class="form-label">Parent's name</label>
+                    <label for="email" class="form-label">Email</label>
                     <div>
-                        <input name="parent_name" type="text" class="form-control">
+                        <input name="email" type="email" class="form-control" required>
+                        <div class="invalid-feedback">Wrong Input</div>
+                    </div>
+                </div>
+                <div>
+                    <label for="parent_name" class="form-label">Parent's name</label>
+                    <div>
+                        <input name="parent_name" type="text" class="form-control" required>
+                        <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
                     <label for="parent_contact" class="form-label">Parent's Contact</label>
                     <div>
-                        <input name="parent_contact" id="parent_contact" type="text" class="form-control">
+                        <input name="parent_contact" id="parent_contact" type="text" class="form-control" required>
+                        <div class="invalid-feedback">Wrong Input</div>
+                    </div>
+                </div>
+                <div>
+                    <label for="is_under_scholarship" class="form-label">Are you physically challenged?</label>
+                    <div>
+                        <input name="is_challenged" type="radio" class="" id="challenged" value="Yes" required>Yes<br>
+                        <input name="is_challenged" type="radio" class="" id="not_challenged" value="No" required>No
+                        <div class="invalid-feedback">Wrong Input</div>
+                    </div>
+                </div>
+                <div class="specify_disability_container">
+                    <label for="disability" class="form-label">Please Specify</label>
+                    <div>
+                        <input name="disability" id="disability" type="text" class="form-control">
                     </div>
                 </div>
                 <div>
                     <label for="is_under_scholarship" class="form-label">Are you under scholarship?</label>
                     <div>
-                        <input name="is_under_scholarship" type="radio" class="" id="under_scholarship" value="Yes">Yes<br>
-                        <input name="is_under_scholarship" type="radio" class="" id="not_under_scholarship" value="No">No
+                        <input name="is_under_scholarship" type="radio" class="" id="under_scholarship" value="Yes" required>Yes<br>
+                        <input name="is_under_scholarship" type="radio" class="" id="not_under_scholarship" value="No" required>No
+                        <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
                     <div class="choose_scholarship_container">
                         <label for="scholarship" class="form-label">Scholarship</label>
-                        <select name="scholarship" id="scholarship_select" class="form-select">
-                            <option value="default_scholarship">Choose Scholarship</option>
+                        <select name="scholarship" id="scholarship_select" class="form-select" required>
+                            <option value="choose_scholarship" selected disabled>Choose Scholarship</option>
                             <option value="Church Of Pentecost">Church of Pentecost</option>
                             <option value="Pentecost University">Pentecost University</option>
                             <option value="Get Fund">GET Fund</option>
                             <option value="others">Others(Please Specify)</option>
                         </select>
+                        <div class="invalid-feedback">Wrong Input</div>
                         <div class="" id="specify_scholarship_container">
                             <label for="specified_scholarship">Specify Scholarship</label>
                             <div>
@@ -133,7 +226,7 @@
                 <div>
                     <button type="button" class="form-control btn btn-outline-primary" id="choose_room_btn" data-bs-toggle="modal" data-bs-target="#choose_room_modal_container">Choose Room</button>
                 </div>
-                <div id="choose_room_modal_container" class="modal">
+                <div id="choose_room_modal_container" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -141,17 +234,29 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body">
-                                
+                            <?php
+                                for($i = 1;$i <= 45; $i++){
+                                    echo '<button type="button" value="'.$i.'" class="btn btn-outline-primary m-2 room-button">'.$i.'</button>';
+                                }
+                            ?>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-primary modal-submit-btn" data-bs-dismiss="modal">Submit</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="">
+                    <label for="room_number" class="form-label">Room Number &nbsp;</label>
+                    <span class="" id="room_num_display"></span>
+                    <div>
+                        <input type="number" name="room_number" id="room_number" class="form-control d-none">
+                        <div class="invalid-feedback">Please select a room</div>
+                    </div>
+                </div>
                 <div class="d-flex justify-content-end mt-3">
-                    <input type="submit" value="Register" class="btn btn-primary">
+                    <input type="submit" name="submit" value="Register" class="btn btn-primary">
                 </div>
             </form>
         </div>
