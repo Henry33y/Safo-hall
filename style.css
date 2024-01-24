@@ -177,6 +177,13 @@ header ul{
     background-color: var(--bs-primary);
     color: white;
 }
+input[type="number"]::-webkit-inner-spin-button{
+    appearance: none;
+}
+table{
+    font-size: 0.8em;
+}
+
 
 @media(max-width: 500px){
     .swiper-button-next,.swiper-button-prev{
@@ -184,5 +191,11 @@ header ul{
     }
     .swiper-button-prev::after,.swiper-button-next::after{
         color: #ffffffde !important;
+    }
+    span.logo-text{
+        font-size: 0.625em;
+    }
+    button.navbar-toggler{
+        transform: scale(0.8);
     }
 }

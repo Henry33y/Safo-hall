@@ -1,6 +1,9 @@
 <?php
-require_once 'includes\db_conn.php';
+$title = 'Register';
+require_once './includes/header.php';
+require_once 'includes/db_conn.php';
 $firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $roomNumber = '';
+$roomResults = $crud->getRoomDetails();
 if(isset($_POST['submit'])){
     if(!empty($_POST['first_name'])){
         $firstName = $_POST['first_name'];
@@ -49,30 +52,24 @@ if(isset($_POST['submit'])){
     }
     if(!empty($_POST['room_number'])){
         $roomNumber = $_POST['room_number'];
-        echo $firstName.', Room Number = '.$roomNumber;
+    }
+    
+    $isSuccess = $crud->insertStudentInfo($firstName,$lastName,$studentId,$category,$level,$programme,$contact,$email,$parentName,$parentContact,$disability,$scholarshipSpecify,$roomNumber);
+
+    if($isSuccess){
+        echo '<h2 class="text-center text-success">You have been registered</h2>';
+    }
+    else{
+        echo '<h2 class="text-center text-danger">There was an error in processing</h2>';
     }
 
-    echo $firstName . $lastName . $studentId . $category . $level . $programme . $contact . $email . $parentName . $parentContact . $physicallyChallenged . $disability . $underScholarship . $scholarshipSpecify . $roomNumber;
     
-
 }
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script defer src="register_script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Register</title>
-</head>
-<body class="min-vh-100 position-relative">
-    <div class="dark-btn position-absolute rounded-pill end-0 mt-3 me-3 position-relative d-flex align-items-center"></div>
-    <main class="pt-4">
+
+    <main class="pt-3">
         <h2 class="text-center">Register</h2>
         <div class="d-flex justify-content-center justify-content-center">
             <form action="register.php" method="post" id="register_form" class="form py-3 px-5 rounded-3 shadow-lg bg-white needs-validation" novalidate>
@@ -178,7 +175,7 @@ if(isset($_POST['submit'])){
                 <div>
                     <label for="parent_contact" class="form-label">Parent's Contact</label>
                     <div>
-                        <input name="parent_contact" id="parent_contact" type="text" class="form-control" required>
+                        <input name="parent_contact" id="parent_contact" type="number" class="form-control" required>
                         <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
@@ -235,8 +232,12 @@ if(isset($_POST['submit'])){
                             </div>
                             <div class="modal-body">
                             <?php
-                                for($i = 1;$i <= 45; $i++){
-                                    echo '<button type="button" value="'.$i.'" class="btn btn-outline-primary m-2 room-button">'.$i.'</button>';
+                                while ($r = $roomResults->fetch(PDO::FETCH_ASSOC)) {
+                                    echo '<button type="button" value="'.$r['room_number'].'" class="btn btn-outline-primary m-2 room-button ';
+                                    if($r['current_students'] == $r['max_students']){
+                                        echo 'disabled bg-secondary';
+                                    }
+                                    echo '">'.$r['room_number'].'</button>';
                                 }
                             ?>
                             </div>
@@ -261,8 +262,4 @@ if(isset($_POST['submit'])){
             </form>
         </div>
     </main>
-    <footer class="">
-        <div class="text-center fs-6">&copy;Developed by ZealCraft Innovations</div>
-    </footer>
-</body>
-</html>
+<?php require_once './includes/footer.php';?>
