@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
 
     if($isSuccess){
         include 'includes/successMessage.php';
-        header('Location: viewRegisteredStudents.php');
+        header('Location: success.php');
     }
     else{
         include 'includes/errMessage.php';
@@ -264,4 +264,4 @@ if(isset($_POST['submit'])){
         </div>
     </main>
 <?php require_once './includes/footer.php';?>
-<script defer src="register_script.js"></script>
+<script defer src="js/register_script.js"></script>

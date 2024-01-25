@@ -180,11 +180,14 @@ header ul{
 input[type="number"]::-webkit-inner-spin-button{
     appearance: none;
 }
-table,table a{
-    font-size: 0.8em;
+table,td a{
+    font-size: 0.8em !important;
 }
 #room_num_display{
     width: 3em;
+}
+#login_form{
+    width: 500px;
 }
 
 

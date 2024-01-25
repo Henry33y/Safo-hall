@@ -2,6 +2,7 @@
 $title = 'Edit Record';
 
 require_once 'includes/header.php';
+require_once 'includes/auth_check.php';
 require_once 'includes/db_conn.php';
 $id = $firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $roomNumber = '';
 $roomResults = $crud->getRoomDetails();
@@ -269,7 +270,7 @@ if(isset($_POST['submit'])){
                     <label for="room_number" class="form-label">Room Number &nbsp;</label>
                     <span class="" id="room_num_display"  value="<?php echo $studentInfo['room_number'] ?>"><?php echo $studentInfo['room_number'] ?></span>
                     <div>
-                        <input type="number" name="room_number" id="room_number"  value="<?php echo $studentInfo['room_number'] ?>" class="form-control d-none">
+                        <input type="hidden" name="room_number" id="room_number"  value="<?php echo $studentInfo['room_number'] ?>" class="form-control">
                         <div class="invalid-feedback">Please select a room</div>
                     </div>
                 </div>
@@ -284,4 +285,4 @@ if(isset($_POST['submit'])){
 <br>
 <br>
 <?php require_once './includes/footer.php';?>
-<script defer src="register_script.js"></script>
+<script defer src="js/edit_script.js"></script>

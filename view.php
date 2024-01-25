@@ -1,6 +1,7 @@
 <?php
     $title = 'View Record';
     require_once 'includes/header.php';
+    require_once 'includes/auth_check.php';
     require_once 'includes/db_conn.php';
 
     if(!isset($_GET['id'])){
