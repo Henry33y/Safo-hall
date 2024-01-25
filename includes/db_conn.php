@@ -10,7 +10,6 @@
     try {
         $pdo = new PDO($dsn,$user,$pwd);
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        echo 'Connection Succesfull';
     } catch (PDOException $e) {
         throw new PDOException($e->getMessage());
     }

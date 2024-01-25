@@ -57,10 +57,11 @@ if(isset($_POST['submit'])){
     $isSuccess = $crud->insertStudentInfo($firstName,$lastName,$studentId,$category,$level,$programme,$contact,$email,$parentName,$parentContact,$disability,$scholarshipSpecify,$roomNumber);
 
     if($isSuccess){
-        echo '<h2 class="text-center text-success">You have been registered</h2>';
+        include 'includes/successMessage.php';
+        header('Location: viewRegisteredStudents.php');
     }
     else{
-        echo '<h2 class="text-center text-danger">There was an error in processing</h2>';
+        include 'includes/errMessage.php';
     }
 
     
@@ -263,3 +264,4 @@ if(isset($_POST['submit'])){
         </div>
     </main>
 <?php require_once './includes/footer.php';?>
+<script defer src="register_script.js"></script>
