@@ -1,11 +1,16 @@
 <?php
     $title = 'View';
+    require_once 'includes/session.php';
     require_once 'includes/header.php';
     require_once 'includes/auth_check.php';
     require_once 'includes/db_conn.php';
 
     $results = $crud->getStudentInfo();
 ?>
+
+<div class="d-flex justify-content-end">
+    <a href="viewRooms.php" class="me-5 btn btn-secondary" style="font-size: 0.9em;">View Rooms Info</a>
+</div>
 <div class="table-responsive m-4">
     <table class="table table-striped table-responsive">
         <tr>

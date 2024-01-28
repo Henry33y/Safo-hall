@@ -1,6 +1,7 @@
 <?php
 $title = 'Edit Record';
 
+require_once 'includes/session.php';
 require_once 'includes/header.php';
 require_once 'includes/auth_check.php';
 require_once 'includes/db_conn.php';
@@ -55,26 +56,19 @@ if(isset($_POST['submit'])){
     else{
         $scholarshipSpecify = $_POST['specified_scholarship'];
     }
-    if(!empty($_POST['room_number'])){
-        $roomNumber = $_POST['room_number'];
+    if(!empty($_POST['old_room_number'])){
+        $oldRoomNumber = $_POST['old_room_number'];
+    }
+    if(!empty($_POST['new_room_number'])){
+        $newRoomNumber = $_POST['new_room_number'];
     }
 
-    $result = $crud->editStudentDetails($id,$firstName,$lastName,$studentId,$category,$level,$programme,$contact,$email,$parentName,$parentContact,$disability,$scholarshipSpecify,$roomNumber);
+    $result = $crud->editStudentDetails($id,$firstName,$lastName,$studentId,$category,$level,$programme,$contact,$email,$parentName,$parentContact,$disability,$scholarshipSpecify,$oldRoomNumber,$newRoomNumber);
     if($result){
         header('Location: viewRegisteredStudents.php');
     }else{
         include 'includes/errMessage.php';
     }
-    
-    // $isSuccess = $crud->insertStudentInfo($firstName,$lastName,$studentId,$category,$level,$programme,$contact,$email,$parentName,$parentContact,$disability,$scholarshipSpecify,$roomNumber);
-
-    // if($isSuccess){
-    //     echo '<h2 class="text-center text-success">You have been registered</h2>';
-    //     header('Location: viewRegisteredStudents.php');
-    // }
-    // else{
-    //     echo '<h2 class="text-center text-danger">There was an error in processing</h2>';
-    // }
 }
 
     if(!isset($_GET['id'])){
@@ -255,7 +249,7 @@ if(isset($_POST['submit'])){
                                     if($r['current_students'] == $r['max_students']){
                                         echo 'disabled bg-secondary';
                                     }
-                                    echo '">'.$r['room_number'].'</button>';
+                                    echo '" onClick = "updateRoomNumber('.$r["room_number"].')">'.$r['room_number'].'</button>';
                                 }
                             ?>
                             </div>
@@ -270,7 +264,9 @@ if(isset($_POST['submit'])){
                     <label for="room_number" class="form-label">Room Number &nbsp;</label>
                     <span class="" id="room_num_display"  value="<?php echo $studentInfo['room_number'] ?>"><?php echo $studentInfo['room_number'] ?></span>
                     <div>
-                        <input type="hidden" name="room_number" id="room_number"  value="<?php echo $studentInfo['room_number'] ?>" class="form-control">
+                        <input type="hidden" name="old_room_number" id="old_room_number" value="<?php echo $studentInfo['room_number'] ?>" class="form-control">
+                        <input type="hidden" name="new_room_number" id="new_room_number" value="<?php echo $studentInfo['room_number'] ?>" class="form-control">
+
                         <div class="invalid-feedback">Please select a room</div>
                     </div>
                 </div>
@@ -285,4 +281,17 @@ if(isset($_POST['submit'])){
 <br>
 <br>
 <?php require_once './includes/footer.php';?>
+<script>
+    let selectedRoom = '';
+
+    function updateRoomNumber(roomNumber) {
+        selectedRoom = roomNumber;
+    }
+
+    document.querySelector('.modal-submit-btn').addEventListener('click', function() {
+        document.getElementById('new_room_number').value = selectedRoom;
+        document.getElementById('room_num_display').innerText = selectedRoom;
+        document.getElementById('room_number').value = selectedRoom;
+    });
+</script>
 <script defer src="js/edit_script.js"></script>

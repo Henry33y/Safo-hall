@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
 
     if($isSuccess){
         include 'includes/successMessage.php';
-        header('Location: success.php');
+        echo "<script>window.location.href='success.php'</script>";
     }
     else{
         include 'includes/errMessage.php';
@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
 ?>
 
 
-    <main class="pt-3">
+     <main class="pt-3">
         <h2 class="text-center">Register</h2>
         <div class="d-flex justify-content-center justify-content-center">
             <form action="register.php" method="post" id="register_form" class="form py-3 px-5 rounded-3 shadow-lg bg-white needs-validation" novalidate>
@@ -234,17 +234,18 @@ if(isset($_POST['submit'])){
                             <div class="modal-body">
                             <?php
                                 while ($r = $roomResults->fetch(PDO::FETCH_ASSOC)) {
-                                    echo '<button type="button" value="'.$r['room_number'].'" class="btn btn-outline-primary m-2 room-button ';
-                                    if($r['current_students'] == $r['max_students']){
+                                    echo '<button type="button" value="' . $r['room_number'] . '" class="btn btn-outline-primary m-2 room-button ';
+                                    if ($r['current_students'] == $r['max_students']) {
                                         echo 'disabled bg-secondary';
                                     }
-                                    echo '">'.$r['room_number'].'</button>';
+                                    echo '">' . $r['room_number'] . '</button>';
                                 }
-                            ?>
+                                ?>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary modal-submit-btn" data-bs-dismiss="modal">Submit</button>
+                                <button type="button" class="btn btn-primary modal-submit-btn"
+                                    data-bs-dismiss="modal">Submit</button>
                             </div>
                         </div>
                     </div>

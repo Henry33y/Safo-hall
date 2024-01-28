@@ -1,5 +1,5 @@
 <?php 
     if(!isset($_SESSION['username'])){
-        header('Location: login.php');
+        echo "<script>window.location.href='login.php'</script>";
     }
 ?>

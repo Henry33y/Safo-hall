@@ -1,6 +1,7 @@
-<?php 
+<?php
     $title = 'User Login';
 
+    require_once 'includes/session.php';
     require_once 'includes/header.php';
     require_once 'includes/db_conn.php';
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -15,7 +16,7 @@
         }else{
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $result['id'];
-            header('Location: viewRegisteredStudents.php');
+            echo "<script>window.location.href='viewRegisteredStudents.php'</script>";
         }
     }
 
