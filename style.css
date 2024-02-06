@@ -1,15 +1,28 @@
 *{
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
 }
 :root{
     --safo-orange: #f15f23;
 }
+html{
+    /* overflow-x: hidden; */
+    width: 100vw;
+}
 body{
+    width: 100%;
     background-color: whitesmoke;
+    /* max-width: 100vw; */
+}
+.row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 header{
     backdrop-filter: blur(6px);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.833);
+    z-index: 99;
 }
 header ul{
     text-transform: uppercase;
@@ -41,8 +54,8 @@ header ul{
     z-index: 99;
 }
 .swiper {
-    width: 100%;
-    max-height: 500px;
+    width: 100vw;
+    max-height: 400px;
     min-height: 250px;
 }
 
@@ -53,13 +66,15 @@ header ul{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100% !important;
+    object-fit: cover !important;
 }
 
 .swiper-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
 }
 .swiper-pagination-bullet {
     background-color: #ffffff !important;
@@ -73,6 +88,9 @@ header ul{
 .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
+}
+.swiper-button-prev,.swiper-button-next{
+    font-style: normal;
 }
 .swiper-button-prev::after,.swiper-button-next::after{
     color: #fff !important;
@@ -97,26 +115,21 @@ header ul{
     background-color: black;
     margin: 4px;
 }
+.mobile-nav-container{
+    height: 100vh;
+    display: none;
+    z-index: 98;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
 .mobile-nav{
     width: 80%;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.mobile-nav > .nav{
-    min-height: 250px !important;
-}
-.mobile-nav > .nav .nav-link{
-    transition: all 400ms;
-}
-.mobile-nav > .nav .nav-link:hover{
-    color: blue !important;
-    background-color: lightgrey;
-}
-.mobile-nav-container{
-    backdrop-filter: blur(6px);
-    display: none;
-    z-index: 9 !important;
-    height: 100vh;
-    overflow-y: hidden;
-    /*TODO: Fix it*/
+.mobile-nav-link{
+    font-weight: 600;
 }
 .logo-container{
     height: 60px;
@@ -129,11 +142,14 @@ header ul{
 .hero-container{
     margin-top: 60px;
 }
-.desktop-nav-link{
+.desktop-nav-link,.mobile-nav-link{
     color: black;
     position: relative;
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
+    font-weight: 600;
 }
-.desktop-nav-link::after{
+.desktop-nav-link::after,.mobile-nav-link::after{
     content: '';
     position: absolute;
     width: 100%;
@@ -145,10 +161,10 @@ header ul{
     transform: scaleX(0);
     transition: 500ms;
 }
-.desktop-nav-link:hover::after{
+.desktop-nav-link:hover::after,.mobile-nav-link:hover::after{
     transform: scaleX(0.8);
 }
-.desktop-nav-link:hover{
+.desktop-nav-link:hover,.mobile-nav-link:hover{
     color: var(--safo-orange);
 }
 .desktop-nav-link:focus{
@@ -180,6 +196,9 @@ header ul{
 input[type="number"]::-webkit-inner-spin-button{
     appearance: none;
 }
+table{
+    width: 100% !important;
+}
 table,td a{
     font-size: 0.8em !important;
 }
@@ -189,6 +208,78 @@ table,td a{
 #login_form{
     width: 500px;
 }
+.horizontal_seperator{
+    background-color: var(--safo-orange);
+    height: 5px;
+}
+.hero_text_container{
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    bottom: 20px;
+}
+.hero_text_container a{
+    color: var(--safo-orange) !important;
+    font-weight: 800;
+}
+.hero_text_container a:hover{
+    color: white !important;
+    background-color: var(--safo-orange);
+    border: 2px solid white;
+}
+.about-section h4{
+    color: var(--safo-orange);
+    font-weight: 800;
+}
+.myCard>img{
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+}
+.myFooter{
+    height: 250px;
+    background-color: var(--safo-orange);
+    color: white;
+}
+.downloadConstitution{
+    background-color: var(--safo-orange);
+    color: white;
+    width: max-content;
+    font-weight: 600;
+}
+.downloadConstitution:hover{
+    background-color: white;
+    border: 2px solid var(--safo-orange);
+    color: var(--safo-orange);
+}
+.footer_text{
+    font-weight: 800;
+    font-size: 1.5em;
+}
+.executives_header{
+    font-weight: 800;
+}
+.modal_close_btn{
+    top: 20px;
+    right: 20px;
+}
+.invalid-feedback{
+    font-size: 0.8em;
+}
+
+@media(max-width:991px){
+    .desktop-nav-link.register_nav_link::after{
+        transform-origin: left;
+    }
+}
+
+@media(max-width:850px){
+    .hero_text_container{
+        position: static !important;
+        background-color: var(--safo-orange);
+    }
+}
+
 
 
 @media(max-width: 500px){
@@ -203,5 +294,15 @@ table,td a{
     }
     button.navbar-toggler{
         transform: scale(0.8);
+    }
+    .hero_text_container{
+        font-size: 0.8em;
+    }
+    .hero_text_container a{
+        font-size: 1em;
+
+    }
+    .swiper{
+        background-color: lightgray;
     }
 }

@@ -8,22 +8,29 @@
     $results = $crud->getStudentInfo();
 ?>
 
-<div class="d-flex justify-content-end">
-    <a href="viewRooms.php" class="me-5 btn btn-secondary" style="font-size: 0.9em;">View Rooms Info</a>
+<div class="d-flex justify-content-between">
+    <?php if(isset($_SESSION['username'])){ ?>
+        <span>Hello <?php echo $_SESSION['username'] ?> !</span>
+    <?php } ?>
+    <a href="viewRooms.php" class="me-md-5 btn btn-secondary" style="font-size: 0.9em;">View Rooms Info</a>
 </div>
-<div class="table-responsive m-4">
-    <table class="table table-striped table-responsive">
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Student ID</th>
-            <th>Category</th>
-            <th>Level</th>
-            <th>Programme</th>
-            <th>Room Number</th>
-            <th>Actions</th>
-        </tr>
+<div class="py-3">
+    <table id="myTable" class="table table-striped no-wrap">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Student ID</th>
+                <th>Category</th>
+                <th>Level</th>
+                <th>Programme</th>
+                <th>Room Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
         <?php
         // $count_id = 1;
          while($r = $results->fetch(PDO::FETCH_ASSOC)){ ?>
@@ -45,8 +52,19 @@
         <?php
             // $count_id++;
             } ?>
+        </tbody>
     </table>
 </div>
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable({
+        responsive: true,
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        }
+    });
+} );
+</script>
 
 
 <?php require_once 'includes/footer.php' ?>

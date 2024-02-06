@@ -31,7 +31,7 @@
             <p class="card-text"><b>Physical Challenges:</b> <?php echo $result['physical_challenges'] ?></p>
             <p class="card-text"><b>Scholarship:</b> <?php echo $result['scholarship'] ?></p>
             <p class="card-text"><b>Room Number:</b> <?php echo $result['room_number'] ?></p>
-            <p class="card-text"><b>Reistered at:</b> <?php echo $result['registered_at'] ?></p>
+            <p class="card-text"><b>Registered at:</b> <?php echo $result['registered_at'] ?></p>
         </div>
     </div>
     <br>

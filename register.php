@@ -1,5 +1,8 @@
 <?php
 $title = 'Register';
+
+require_once './includes/session.php';
+session_destroy();
 require_once './includes/header.php';
 require_once 'includes/db_conn.php';
 $firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $roomNumber = '';
@@ -78,21 +81,21 @@ if(isset($_POST['submit'])){
                     <label for="first_name" class="form-label">First Name</label>
                     <div>
                         <input type="text" name="first_name" id="first_name" class="form-control pe-5" required>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">This field cannot be empty</div>
                     </div>
                 </div>
                 <div>
                     <label for="last_name" class="form-label">Last Name</label>
                     <div>
                         <input type="text" name="last_name" id="last_name" class="form-control" required>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">This field cannot be empty</div>
                     </div>
                 </div>
                 <div>
                     <label for="student_id" class="form-label">Student ID</label>
                     <div>
                         <input type="text" name="student_id" id="student_id" class="form-control" required>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">This field cannot be empty</div>
                     </div>
                 </div>
                 <div>
@@ -104,7 +107,7 @@ if(isset($_POST['submit'])){
                             <option value="abe">ABE</option>
                             <option value="ncce">NCCE</option>
                         </select>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">Please choose an option</div>
                     </div>
                 </div>
                 <div>
@@ -133,7 +136,7 @@ if(isset($_POST['submit'])){
                             <option value="B.Sc. Information Technology">B.Sc. Information Technology</option>
                             <option value="B.Sc. Nursing">B.Sc. Nursing</option>
                         </select>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">Please choose an option</div>
                     </div>
                 </div>
                 <div>
@@ -149,35 +152,35 @@ if(isset($_POST['submit'])){
                             <option value="400">5</option>
                             <option value="400">6</option>
                         </select>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">Please choose an option</div>
                     </div>
                 </div>
                 <div>
                     <label for="contact" class="form-label">Contact</label>
                     <div>
                         <input name="contact" type="number" class="form-control" required>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">This field cannot be empty</div>
                     </div>
                 </div>
                 <div>
                     <label for="email" class="form-label">Email</label>
                     <div>
                         <input name="email" type="email" class="form-control" required>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">This field cannot be empty</div>
                     </div>
                 </div>
                 <div>
                     <label for="parent_name" class="form-label">Parent's name</label>
                     <div>
                         <input name="parent_name" type="text" class="form-control" required>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">This field cannot be empty</div>
                     </div>
                 </div>
                 <div>
                     <label for="parent_contact" class="form-label">Parent's Contact</label>
                     <div>
                         <input name="parent_contact" id="parent_contact" type="number" class="form-control" required>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">This field cannot be empty</div>
                     </div>
                 </div>
                 <div>
@@ -185,7 +188,7 @@ if(isset($_POST['submit'])){
                     <div>
                         <input name="is_challenged" type="radio" class="" id="challenged" value="Yes" required>Yes<br>
                         <input name="is_challenged" type="radio" class="" id="not_challenged" value="No" required>No
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">Please choose an option</div>
                     </div>
                 </div>
                 <div class="specify_disability_container">
@@ -199,7 +202,7 @@ if(isset($_POST['submit'])){
                     <div>
                         <input name="is_under_scholarship" type="radio" class="" id="under_scholarship" value="Yes" required>Yes<br>
                         <input name="is_under_scholarship" type="radio" class="" id="not_under_scholarship" value="No" required>No
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">Please choose an option</div>
                     </div>
                 </div>
                 <div>
@@ -212,7 +215,7 @@ if(isset($_POST['submit'])){
                             <option value="Get Fund">GET Fund</option>
                             <option value="others">Others(Please Specify)</option>
                         </select>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <div class="invalid-feedback">Please choose an option</div>
                         <div class="" id="specify_scholarship_container">
                             <label for="specified_scholarship">Specify Scholarship</label>
                             <div>
@@ -227,9 +230,10 @@ if(isset($_POST['submit'])){
                 <div id="choose_room_modal_container" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title">Choose Room</h3>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            <div class="modal-header d-flex flex-column text-start position-relative">
+                                <h3 class="modal-title w-100">Choose Room</h3>
+                                <small class="text-small w-100">Select a room number and click  on the submit button below</small>
+                                <button type="button" class="btn-close position-absolute modal_close_btn" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body">
                             <?php

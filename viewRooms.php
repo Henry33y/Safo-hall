@@ -9,14 +9,17 @@
     $results = $crud->getRoomDetails();
 ?>
 
-<div class="table-responsive m-4">
-    <table class="table table-striped table-responsive">
-        <tr>
-            <th>#</th>
-            <th>Room Number</th>
-            <th>Current Students</th>
-            <th>Maximum Students</th>
-        </tr>
+<div class="py-4 w-100">
+    <table id="myTable" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Room Number</th>
+                <th>Current Students</th>
+                <th>Maximum Students</th>
+            </tr>
+        </thead>
+        <tbody>
         <?php
          while($r = $results->fetch(PDO::FETCH_ASSOC)){ ?>
             <tr>
@@ -27,5 +30,16 @@
             </tr>
         <?php
             } ?>
+        </tbody>
     </table>
 </div>
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable({
+        responsive: true,
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+    }
+    });
+} );
+</script>

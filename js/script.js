@@ -1,20 +1,37 @@
 const hamburgerBtn = document.querySelector('.hamburger-btn');
-const mobileNav = document.querySelector('.mobile-nav-container');
+const mobileNavContainer = document.querySelector('.mobile-nav-container');
+const mobileNav = document.querySelector('.mobile-nav');
 
 hamburgerBtn.addEventListener('click',()=>{
     hamburgerBtn.classList.toggle('clicked');
-    toggleMobileNav()
+    toggleMobileNavContainer()
 })
 
-function toggleMobileNav(){
+mobileNavContainer.addEventListener('click', () => {
+    if (hamburgerBtn.classList.contains('clicked')) {
+        hideMobileNav();
+    }
+});
+
+mobileNav.addEventListener('click', (e) => {
+    // Stop propagation of the click event
+    e.stopPropagation();
+});
+
+function toggleMobileNavContainer(){
     if(hamburgerBtn.classList.contains('clicked')){
-        mobileNav.style.display = 'flex';
+        mobileNavContainer.style.display = 'flex';
     }
     else{
-        mobileNav.style.display = 'none';
+        mobileNavContainer.style.display = 'none';
 
     }
 }
+function hideMobileNav(){
+    hamburgerBtn.classList.remove('clicked')
+    mobileNavContainer.style.display = 'none'
+}
+
 
 
 

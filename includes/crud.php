@@ -52,19 +52,14 @@
         }
         public function editStudentDetails($id,$firstName,$lastName,$studentId,$category,$level,$programme,$contact,$email,$parentName,$parentContact,$disability,$scholarshipSpecify,$oldRoomNumber,$newRoomNumber){
             try{
-                // Get the current room details for both old and new room numbers
                 $oldRoomDetails = $this->getRoomDetailsByRoomNumber($oldRoomNumber);
                 $newRoomDetails = $this->getRoomDetailsByRoomNumber($newRoomNumber);
 
-                // Check if the room is changing
                 if ($oldRoomNumber !== $newRoomNumber) {
-                    // Check if the new room is not at maximum capacity
                     if ($newRoomDetails['current_students'] < $newRoomDetails['max_students']) {
-                        // Increment current students count for the new room
                         $newRoomDetails['current_students']++;
                         $this->updateRoomCurrentStudents($newRoomNumber, $newRoomDetails['current_students']);
 
-                        // Decrement current students count for the old room
                         $oldRoomDetails['current_students']--;
                         $this->updateRoomCurrentStudents($oldRoomNumber, $oldRoomDetails['current_students']);
                     } else {

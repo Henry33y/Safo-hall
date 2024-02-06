@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.4.1/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/rowreorder/1.4.1/js/dataTables.rowReorder.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title><?php echo $title ?></title>
 </head>
@@ -20,22 +27,21 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarText">
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link desktop-nav-link" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link desktop-nav-link register_nav_link" aria-current="page" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link desktop-nav-link" href="viewRegisteredStudents.php">View Student Info</a>
+          <a class="nav-link desktop-nav-link register_nav_link" href="viewRegisteredStudents.php">View Student Info</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link desktop-nav-link" href="register.php">Register</a>
+          <a class="nav-link desktop-nav-link register_nav_link" href="register.php">Register</a>
         </li>
         <li class="nav-item">
             <?php
             if(!isset($_SESSION['username'])){
             ?>
-            <a class="nav-link desktop-nav-link" href="login.php">Login</a>
+            <a class="nav-link desktop-nav-link register_nav_link" href="login.php">Login</a>
             <?php } else{?>
-            <a class="nav-item nav-link desktop-nav-link" href="#"><span>Hello <?php echo $_SESSION['username']?></span></a>
-            <a class="nav-item nav-link desktop-nav-link" href="logout.php">Logout</a>
+            <a class="nav-item nav-link desktop-nav-link register_nav_link" href="logout.php">Logout</a>
             <?php } ?>
             
         </li>
