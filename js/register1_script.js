@@ -8,7 +8,7 @@ const specify_disability_container = document.querySelector('.specify_disability
 const challengedDisabilityRadio = document.querySelector('#challenged')
 const notChallengedDisabilityRadio = document.querySelector('#not_challenged')
 
-const form = document.querySelector('#register_form')
+const form = document.querySelector('#wizard')
 const roomButtons = document.querySelectorAll('.room-button')
 const modalSubmitRoomBtn = document.querySelector('.modal-submit-btn')
 const roomNumberInput = document.querySelector('#room_number')
@@ -67,4 +67,11 @@ modalSubmitRoomBtn.addEventListener('click',()=>{
     roomNumberDisplay.innerText = selectedRoomNumber
     
     console.log(roomNumberInput.value);
+})
+
+const submitBtn = document.querySelector('a[href="#finish"]')
+console.log(submitBtn);
+document.addEventListener('DOMContentLoaded',()=>{
+    // Example using document.querySelector
+    console.log(document.querySelector('#challenged'));
 })

@@ -1,5 +1,5 @@
 <?php 
-    $title = 'View Rooms';
+    $title = 'Rooms Info';
     
     require_once 'includes/session.php';
     require_once 'includes/header.php';
@@ -39,7 +39,31 @@
         responsive: true,
         rowReorder: {
             selector: 'td:nth-child(2)'
-    }
+        },
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'collection',
+                text: 'Options',
+                className: 'custom-html-collection',
+                buttons: [
+                    '<h3>Export</h3>',
+                    {
+                        extend: 'pdfHtml5',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL'
+                    },
+                    'csv',
+                    'excel',
+                    '<h3 class="not-top-heading">Column Visibility</h3>',
+                    {
+                        extend: 'colvis',
+                        collectionLayout: 'fixed columns',
+                        collectionTitle: 'Column visibility control'
+                    }
+                ]
+            }
+        ]
     });
 } );
 </script>

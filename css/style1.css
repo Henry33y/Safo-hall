@@ -1,0 +1,13 @@
+.image-holder img{
+    min-height: 100% !important;
+    object-fit: cover;
+}
+#wizard-p-0{
+    height: 100%;
+}
+#wizard-p-1{
+    height: 100%;
+}
+#wizard-p-2{
+    height: 100%;
+}
