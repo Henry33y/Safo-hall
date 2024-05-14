@@ -21,6 +21,7 @@
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
     <script src="js/jquery.steps.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" href="style.css">
     <title><?php echo $title ?></title>
 </head>
@@ -30,7 +31,7 @@
     <a class="navbar-brand d-flex" href="index.html">
         <img class="d-inline-block logo img-fluid" style="height:auto;" src="./assets/images/safo web logo.png" alt=""><span class="logo-text d-flex align-items-center">SAFO HALL</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarText">
