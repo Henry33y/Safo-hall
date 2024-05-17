@@ -175,6 +175,9 @@ header ul {
 .desktop-nav-link:focus {
   color: black;
 }
+.nav-link{
+  font-family: "Montserrat", sans-serif;
+}
 .logo-text {
   display: block;
   font-family: "Montserrat", sans-serif;
@@ -190,6 +193,24 @@ header ul {
 }
 .specify_disability_container {
   display: none;
+}
+.form-check-input:checked{
+  background-color: #6d7f52;
+  border-color: #6d7f52;
+}
+.chooseRoomBtn{
+  background-color: #6d7f52;
+  color: white;
+}
+.chooseRoomBtn:hover{
+  background-color: white;
+  color: #6d7f52;
+  border: 2px solid #6d7f52;
+}
+.chooseRoomBtn:focus{
+  background-color: #6d7f52;
+  color: white;
+  box-shadow: none;
 }
 .room-button {
   width: 50px;

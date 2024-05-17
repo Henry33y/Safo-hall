@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
               <div class="form-holder">
-                <select name="category" id="category" class="form-select" required>
+                <select name="category" id="category" class="form-select form-control" required>
                   <option selected disabled value="">Select Category</option>
                   <option value="undergraduate">Undergraduate</option>
                   <option value="abe">ABE</option>
@@ -121,20 +121,20 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             </div>
             <div class="form-row">
               <div class="form-holder">
-                <select name="level" id="level" class="form-select" required>
+                <select name="level" id="level" class="form-select form-control" required>
                   <option selected disabled value="">Choose level</option>
                   <option value="100">100</option>
                   <option value="200">200</option>
                   <option value="300">300</option>
                   <option value="400">400</option>
-                  <option value="400">4</option>
-                  <option value="400">5</option>
-                  <option value="400">6</option>
+                  <option value="4">4</option>
+                  <option value="4">5</option>
+                  <option value="6">6</option>
                 </select>
                 <div class="invalid-feedback">Please choose an option</div>
               </div>
               <div class="form-holder" style="align-self: flex-end; transform: translateY(4px)">
-                <select name="programme" type="text" class="form-select" required>
+                <select name="programme" type="text" class="form-select form-control" required>
                   <option selected disabled value="">Select Programme</option>
                   <option value="B.Sc. Actuarial Science">B.Sc. Actuarial Science</option>
                   <option value="B.Sc. Quantity Surveying and Building Economics">B.Sc. Quantity Surveying and Building
@@ -232,9 +232,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 <div>
                   <label for="is_challenged" class="form-check-label">Are you physically challenged?</label>
                   <div>
-                    <input name="is_challenged" type="radio" class="form-check-input" id="challenged" value="Yes"
-                      required onchange="">Yes<br>
-                    <input name="is_challenged" type="radio" class="form-check-input" id="not_challenged" value="No"
+                    <input name="is_challenged" type="radio" class="form-check-input me-3" id="challenged" value="Yes"
+                      required>Yes<br>
+                    <input name="is_challenged" type="radio" class="form-check-input me-3" id="not_challenged" value="No"
                       required>No
                     <div class="invalid-feedback">Please choose an option</div>
                   </div>
@@ -250,9 +250,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 <div>
                   <label for="is_under_scholarship" class="form-check-label">Are you under scholarship?</label>
                   <div>
-                    <input name="is_under_scholarship" type="radio" class="form-check-input" id="under_scholarship"
+                    <input name="is_under_scholarship" type="radio" class="form-check-input me-3" id="under_scholarship"
                       value="Yes" required>Yes<br>
-                    <input name="is_under_scholarship" type="radio" class="form-check-input" id="not_under_scholarship"
+                    <input name="is_under_scholarship" type="radio" class="form-check-input me-3" id="not_under_scholarship"
                       value="No" required>No
                     <div class="invalid-feedback">Please choose an option</div>
                   </div>
@@ -260,7 +260,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 <div>
                   <div class="choose_scholarship_container" id="choose_scholarship_container">
                     <label for="scholarship" class="form-label">Scholarship</label>
-                    <select name="scholarship" id="scholarship_select" class="form-select" required>
+                    <select name="scholarship" id="scholarship_select" class="form-select form-control" required>
                       <option value="choose_scholarship" selected disabled>Choose Scholarship</option>
                       <option value="Church Of Pentecost">Church of Pentecost</option>
                       <option value="Pentecost University">Pentecost University</option>
@@ -279,7 +279,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
               </div>
             </div>
             <div>
-              <button type="button" class="form-control btn btn-outline-primary my-3" id="choose_room_btn"
+              <button type="button" class="chooseRoomBtn form-control btn btn-outline-primary my-3" id="choose_room_btn"
                 data-bs-toggle="modal" data-bs-target="#choose_room_modal_container">Choose Room</button>
             </div>
             <div id="choose_room_modal_container" class="modal fade">
