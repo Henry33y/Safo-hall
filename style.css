@@ -491,3 +491,112 @@ div.dt-button-collection h3.not-top-heading {
     transform: translateX(-50%);
   }
 }
+
+
+/*I am Isaac Asante Darko My Css Code Start from Here*/
+.header-image h1{
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+.header-image img{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.History{
+  padding: 20px;
+}
+
+.brief-Details_of_Safo h1{
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.brief-Details_of_Safo p{
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+}
+
+.gallery-container{
+     display: flex;
+     margin: 5px;
+}
+
+.img1 img{
+  margin: 1px;
+  width: 100%;
+}
+
+.img1{
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 2px;
+}
+
+.effect{
+   display: none;
+   color: white;
+   position: absolute;
+   background-blend-mode: darken;
+   bottom: 2px;
+}
+
+.img1:hover .effect{
+  display: block;
+  width: 100%;
+  backdrop-filter: blur(5px);
+   
+}
+
+.jama{
+  display: flex;
+  background-color: #f15f23;
+  color: #fff;
+}
+
+.jama iframe{
+  border-radius: 5px;
+  
+  margin: 10px;
+}
+
+@media screen and (max-width:600px){
+  .gallery-container{
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (min-width:600px){
+  .map {
+    width: 100%;
+  }
+
+}
+
+.footer{
+  color: white;
+  background-color: black;
+  height: 20%;
+}
+
+#footerHead{
+  text-align: center;
+  padding: 10px;
+}
+
+.footer .socialMedia{
+  justify-content: center;
+}
+
+.footer .socialMedia a{
+  color: #f15f23;
+}
+
+
+
+
