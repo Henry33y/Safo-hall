@@ -96,17 +96,17 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             <p>Please fill with your details</p>
             <div class="form-row">
               <div class="form-holder">
-                <input type="text" name="first_name" id="first_name" placeholder="First Name" class="form-control" required/>
+                <input type="text" spellcheck="false" name="first_name" id="first_name" placeholder="First Name" class="form-control" required/>
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
               <div class="form-holder">
-                <input type="text" name="last_name" id="last_name" placeholder="Last Name" class="form-control" required/>
+                <input type="text" spellcheck="false" name="last_name" id="last_name" placeholder="Last Name" class="form-control" required/>
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
             </div>
             <div class="form-row">
               <div class="form-holder">
-                <input type="text" name="student_id" id="student_id" placeholder="Student ID" class="form-control" required/>
+                <input type="text" spellcheck="false" name="student_id" id="student_id" placeholder="Student ID" class="form-control" required/>
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
               <div class="form-holder">
@@ -282,14 +282,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
               <button type="button" class="chooseRoomBtn form-control btn btn-outline-primary my-3" id="choose_room_btn"
                 data-bs-toggle="modal" data-bs-target="#choose_room_modal_container">Choose Room</button>
             </div>
-            <div id="choose_room_modal_container" class="modal fade">
+            <div id="choose_room_modal_container" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header d-flex flex-column text-start position-relative">
                     <h3 class="modal-title w-100">Choose Room</h3>
-                    <small class="text-small w-100">Select a room number and click on the submit button below</small>
-                    <button type="button" class="btn-close position-absolute modal_close_btn"
-                      data-bs-dismiss="modal"></button>
+                    <small class="text-small w-100 mt-3">Select a room number and click on the submit button below</small>
+                    <!-- <button type="button" class="btn-close position-absolute modal_close_btn"
+                      data-bs-dismiss="modal"></button> -->
                   </div>
                   <div class="modal-body">
                     <?php
@@ -342,6 +342,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
   <script>      
         $(document).ready(function(){
+          var navbarHeight = $('.navbar').outerHeight();
+          $('body').css('margin-top', navbarHeight + 'px');
+
           $("#challenged").click(function(){
             $("#specify_disability_container").show();
           });
@@ -387,11 +390,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         
         $('#wizard').addClass('was-validated');
     });
+    $('#student_id').on('keyup', function() {
+                let currentValue = $(this).val();
+                let upperCaseValue = currentValue.toUpperCase();
+                $(this).val(upperCaseValue);
+                console.log('Hello');
+            });    
         });
-
-
-
-        
     </script>
 <?php require_once 'includes/footer.php' ?>
 

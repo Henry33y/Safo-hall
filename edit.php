@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
 
     $result = $crud->editStudentDetails($id,$firstName,$lastName,$studentId,$category,$level,$programme,$contact,$email,$parentName,$parentContact,$disability,$scholarshipSpecify,$oldRoomNumber,$newRoomNumber);
     if($result){
-        header('Location: viewRegisteredStudents.php');
+        echo "<script>window.location.href='viewRegisteredStudents.php'</script>";
     }else{
         include 'includes/errMessage.php';
     }

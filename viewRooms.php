@@ -9,7 +9,10 @@
     $results = $crud->getRoomDetails();
 ?>
 
-<div class="py-4 w-100">
+<div class="container-xxl w-100">
+    <div>
+        <h3 class="my-3 text-center">All Rooms</h3>
+    </div>
     <table id="myTable" class="table table-striped" style="width:100%">
         <thead>
             <tr>
@@ -17,6 +20,7 @@
                 <th>Room Number</th>
                 <th>Current Students</th>
                 <th>Maximum Students</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +31,11 @@
                 <td><?php echo $r['room_number'] ?></td>
                 <td><?php echo $r['current_students'] ?></td>
                 <td><?php echo $r['max_students'] ?></td>
+                <td>
+                    <!-- <a title="View" href="view.php?id=<?php echo $r['id'] ?>" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a> -->
+                    <a title="Edit" href="editRoom.php?no=<?php echo $r['room_number'] ?>" class="btn btn-success">Edit<i class="ms-2 bi bi-pencil-square"></i></a>
+                    <!-- <a title="Delete" onclick="return confirm('Are you sure you want to delete this record? This action cannot be reversed.')" href="delete.php?id=<?php echo $r['id'] ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a> -->
+                </td>
             </tr>
         <?php
             } ?>
@@ -67,3 +76,4 @@
     });
 } );
 </script>
+<?php require_once 'includes/footer.php' ?>

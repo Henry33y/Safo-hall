@@ -180,5 +180,21 @@
                 echo $e->getMessage();
             }
         }
+
+        public function updateRoomDetails($roomNumber, $currentStudents, $maxStudents){
+            try {
+                $sql = 'UPDATE rooms SET current_students = :currentStudents, max_students = :maxStudents WHERE room_number = :roomNumber';
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':roomNumber', $roomNumber);
+                $stmt->bindparam(':currentStudents', $currentStudents);
+                $stmt->bindparam(':maxStudents', $maxStudents);
+                $stmt->execute();
+
+                return true;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
     }
 ?>

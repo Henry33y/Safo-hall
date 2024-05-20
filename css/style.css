@@ -70,7 +70,7 @@ img {
   top: 21.44%;
   right: 30%;
   transform: translateX(50%);
-  z-index: 9;
+  z-index: 1;
 }
 .wizard > .steps .current-info,
 .wizard > .steps .number {
@@ -479,6 +479,7 @@ textarea.form-control {
     right: 50%;
     top: 52%;
     transform: translateX(50%);
+    z-index: 1 !important;
   }
   .actions {
     right: 50%;
