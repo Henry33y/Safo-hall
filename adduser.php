@@ -26,6 +26,7 @@
 <div class="d-flex justify-content-center">
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" class="form needs-validation p-3 mt-4 bg-white rounded-2" id="login_form" novalidate method="POST">
         <h1 class="text-center"><?php echo $title ?></h1>
+        <p class="text-center text-danger">For Administrators Only!</p>
         <div>
             <div>
                 <label for="" class="form-label">Username</label>
