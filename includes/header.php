@@ -30,8 +30,8 @@
   <title><?php echo $title ?></title>
 </head>
 
-<body class="min-vh-100 position-relative">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary py-0">
+<body class="min-vh-100 position-relative registerBody">
+  <nav class="navbar navbar-expand-lg registerNavBar py-0 shadow-sm position-fixed w-100 top-0 bg-white" style="z-index: 9;">
     <d class="container-fluid">
       <a class="navbar-brand d-flex" href="index.html">
         <img class="d-inline-block logo img-fluid" style="height:auto;" src="./assets/images/safo web logo.png"
@@ -47,22 +47,49 @@
             <a class="nav-link desktop-nav-link register_nav_link" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link desktop-nav-link register_nav_link" href="viewRegisteredStudents.php">View Student
-              Info</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link desktop-nav-link register_nav_link" href="register.php">Register</a>
           </li>
+          <?php if(isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'viewRegisteredStudents.php'){?>
           <li class="nav-item">
+            <a class="nav-link desktop-nav-link register_nav_link" href="viewRegisteredStudents.php">Student Info</a>
+          </li>
+          <?php }else{
+            echo '';
+          } ?>
+          <?php if(isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'viewRooms.php'){?>
+          <li class="nav-item">
+            <a class="nav-link desktop-nav-link register_nav_link" href="viewRooms.php">Rooms</a>
+          </li>
+          <?php } else{ echo '';}?>
+          <li class="nav-item d-lg-inline-block">
             <?php
             if (!isset($_SESSION['username'])) {
               ?>
               <a class="nav-link desktop-nav-link register_nav_link" href="login.php">Login</a>
             <?php } else { ?>
-              <a class="nav-item nav-link desktop-nav-link register_nav_link" href="logout.php">Logout</a>
+              <div class="dropdown d-none d-lg-block">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php if(isset($_SESSION['username'])){ ?>
+                        <span><i class="bi bi-person-circle me-2"></i>Hello <?php echo ucwords($_SESSION['username']) ?> !</span>
+                    <?php } ?>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="adduser.php"><i class="bi bi-person-add me-2"></i>Add User</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="logout.php"><i class="bi bi-power me-2"></i>Logout</a></li>
+                </ul>
+              </div>
+              
+              <!-- <a class="nav-item nav-link desktop-nav-link register_nav_link" href="logout.php">Logout</a> -->
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link desktop-nav-link register_nav_link" href="adduser.php"><i class="bi bi-person-add me-2"></i>Add User</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link desktop-nav-link register_nav_link" href="logout.php"><i class="bi bi-power me-2"></i>Logout</a>
+            </li>
             <?php } ?>
 
-          </li>
         </ul>
         <!-- <span class="navbar-text">
         Navbar text with an inline element

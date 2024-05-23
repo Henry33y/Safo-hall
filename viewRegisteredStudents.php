@@ -8,21 +8,10 @@
     $results = $crud->getStudentInfo();
 ?>
 
-<div class="container-xl">
+<div class="container-xxl">
     <div class="d-flex justify-content-between">
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php if(isset($_SESSION['username'])){ ?>
-                    <span><i class="bi bi-person-circle me-2"></i>Hello <?php echo ucwords($_SESSION['username']) ?> !</span>
-                <?php } ?>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="adduser.php"><i class="bi bi-person-add me-2"></i>Add User</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="logout.php"><i class="bi bi-power me-2"></i>Logout</a></li>
-            </ul>
-        </div>
-        <a href="viewRooms.php" class="me-md-5 btn btn-secondary" style="font-size: 0.9em;">View Rooms Info</a>
+        <h3 class="m-0 d-flex align-items-center">All Registered Students</h3>
+        <a href="register.php" class="d-flex align-items-center btn btn-success" style="font-size: 0.9em;"><span class="d-md-inline d-none">Add New Student</span><i class="bi bi-plus ms-md-2 fs-4"></i></a>
     </div>
     <div class="py-3">
         <table id="myTable" class="table table-striped table-bordered no-wrap">
@@ -67,10 +56,10 @@
                     <td><?php echo $r['physical_challenges'] ?></td>
                     <td><?php echo $r['scholarship'] ?></td>
                     <td><?php echo $r['registered_at'] ?></td>
-                    <td>
-                        <a href="view.php?id=<?php echo $r['id'] ?>" class="btn btn-primary">View</a>
-                        <a href="edit.php?id=<?php echo $r['id'] ?>" class="btn btn-warning">Edit</a>
-                        <a onclick="return confirm('Are you sure you want to delete this record? This action cannot be reversed.')" href="delete.php?id=<?php echo $r['id'] ?>" class="btn btn-danger">Delete</a>
+                    <td style="font-size: 1.1em;">
+                        <a title="View" href="view.php?id=<?php echo $r['id'] ?>" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
+                        <a title="Edit" href="edit.php?id=<?php echo $r['id'] ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                        <a title="Delete" onclick="return confirm('Are you sure you want to delete this record? This action cannot be reversed.')" href="delete.php?id=<?php echo $r['id'] ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
                     </td>
                 </tr>
             <?php

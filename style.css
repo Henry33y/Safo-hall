@@ -13,7 +13,7 @@ html {
 }
 body {
   max-width: 100vw;
-  background-color: whitesmoke;
+  background-color: #f9f6f1;;
 }
 .row {
   margin-left: 0px !important;
@@ -66,7 +66,7 @@ header ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100% !important;
+  height: auto !important;
   object-fit: cover !important;
 }
 
@@ -115,6 +115,9 @@ header ul {
   border-radius: 50%;
   background-color: black;
   margin: 4px;
+}
+.registerBody{
+  padding-top: 20px;
 }
 .mobile-nav-container {
   height: 100vh;
@@ -214,10 +217,21 @@ header ul {
 }
 .room-button {
   width: 50px;
+  border-color: #6d7f52;
+  color: #6d7f52;
 }
 .room-button:focus {
-  background-color: var(--bs-primary);
+  border-color: #6d7f52;
+  background-color: #6d7f52;
   color: white;
+}
+.room-button:hover {
+  border-color: #6d7f52;
+  background-color: #6d7f52;
+  color: white;
+}
+#not_challenged, #challenged, #not_under_scholarship, #under_scholarship{
+  border-color: #6d7f52;
 }
 input[type="number"]::-webkit-inner-spin-button {
   appearance: none;
@@ -289,6 +303,25 @@ td a {
 .modal_close_btn {
   top: 20px;
   right: 20px;
+}
+.modal-title{
+    letter-spacing: 0px;
+    padding: 5px 15px;
+    display: inline-block;
+    border: 1px solid #dad8e4;
+}
+.modal-title + small{
+  color: black;
+}
+.modal-submit-btn{
+  background-color: #6d7f52;
+  color: white;
+  border-color: #6d7f52;
+}
+.modal-submit-btn:hover{
+  background-color: white;
+  color: #6d7f52;
+  border-color: #6d7f52;
 }
 .invalid-feedback {
   font-size: 0.8em;
