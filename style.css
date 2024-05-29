@@ -326,6 +326,9 @@ td a {
 .invalid-feedback {
   font-size: 0.8em;
 }
+.checkbox-circle{
+  display: none;
+}
 div.dt-button-background {
   min-height: 100vh !important;
 }
@@ -493,7 +496,17 @@ div.dt-button-collection h3.not-top-heading {
     background-color: var(--safo-orange);
   }
 }
-
+@media(max-width: 576px){
+  .wizard.clearfix{
+    padding-bottom: 5em;
+  }
+  .form-content{
+    margin-bottom: 20em;
+  }
+  .actions.clearfix{
+    bottom: 0;
+  }
+}
 @media (max-width: 500px) {
   .swiper-button-next,
   .swiper-button-prev {
