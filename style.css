@@ -585,22 +585,14 @@ div.dt-button-collection h3.not-top-heading {
 
 .img1:hover .effect{
   display: block;
-  width: 100%;
-  backdrop-filter: blur(5px);
-   
+   border-image: fill 0 linear-gradient(#0001, #000);
+
 }
 
-.jama{
-  display: flex;
-  background-color: #f15f23;
-  color: #fff;
+.map{
+  margin: 20px;
 }
 
-.jama iframe{
-  border-radius: 5px;
-  
-  margin: 10px;
-}
 
 @media screen and (max-width:600px){
   .gallery-container{
@@ -613,17 +605,47 @@ div.dt-button-collection h3.not-top-heading {
 
 }
 
-@media screen and (min-width:600px){
+@media screen and (max-width:600px){
   .map {
     width: 100%;
   }
+  .geo{
+    display: flex;
+  }
+
+  @media screen and (min-width: 600px){
+    .map{
+    }
+    
+  }
+
+ .footercontainer{
+  flex-direction: column;
+ }
 
 }
 
 .footer{
+  /* background-image: url(assets/images/Safo2.jpg); */
+  /* background-color: #000; */
   color: white;
-  background-color: black;
-  height: 20%;
+  background-color: rgba(0, 0, 0, 0.945);
+  height: 5%;
+  position: relative;
+}
+
+
+.footer::before{
+  content: '';
+  background-image: url(assets/images/Safo2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  
 }
 
 #footerHead{
@@ -638,6 +660,97 @@ div.dt-button-collection h3.not-top-heading {
 .footer .socialMedia a{
   color: #f15f23;
 }
+
+.footercontainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactform{
+  text-align: center;
+  padding: 8px;
+}
+
+textarea{
+  margin-top: 7px;
+  outline: none;
+  color: white;
+  background: transparent;
+  padding: 10px;
+  width: 100%;
+}
+
+.contactform input{
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 0.7px solid gray;
+  margin: 3px;
+  background: transparent;
+  color: white;
+}
+
+.contactform input:focus{
+  outline: none;
+}
+
+.socialMedia{
+  display: flex;
+}
+
+.socialMedia i{
+  font-size: 25px;
+  padding: 5px;
+  margin: 5px;
+  transition: all 0.5s ease-in;
+}
+
+.socialMedia i:hover{
+  color: #dad8e4;
+  transform: rotateY(360deg);
+}
+
+.xyz{
+  margin:0px 5px;
+}
+
+input::placeholder{
+  color: #ffffff;
+}
+
+@media screen and (max-width:600px){
+  .contactform input{
+    width: 100%;
+  }
+  textarea{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:600px){
+  .xyz{
+      width: 30%;    
+  }
+}
+
+.developer{
+  font-size: medium;
+  text-align: center;
+  padding: 5px;
+  font-weight: 200;
+}
+
+#submitMessage{
+  margin-top: 7px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(97, 155, 241);
+  width: 100%;
+}
+
+
 
 
 
