@@ -11,6 +11,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <script defer src="js/email.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "R_QGTO1g1EEz-V9sK",
+      });
+   })();
+</script>
     <title>About</title>
 </head>
 <body class="min-vh-100 position-relative">
@@ -173,26 +190,26 @@
             <div class="xyz">
                 <div class="contactform">
                     <h3>Contact Us</h3>
-                    <form action="">
+                    <form action="#" id="contact_form">
                         <div>
                             
-                            <input type="text" placeholder="Full name">
+                            <input type="text" placeholder="Full name" id="fullname" required>
                         </div>
     
                         <div>
                             
-                            <input type="text" placeholder="Email Address">
+                            <input type="email" placeholder="Email Address" id="email" required>
                         </div>
     
                         <div>
-                            <input type="text" placeholder="Contact">
+                            <input type="text" placeholder="Contact" id="contact" required>
                         </div>
     
                         <div>
-                            <textarea name="message" id="" placeholder="Enter message" rows="5"></textarea>
+                            <textarea name="message" id="message" placeholder="Enter message" rows="5" required></textarea>
                         </div>
     
-                        <button id="submitMessage">Submit</button>
+                        <button id="submitMessage" type="submit">Submit</button>
                         
                     </form>
                 </div>
