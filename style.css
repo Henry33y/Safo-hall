@@ -718,6 +718,8 @@ textarea{
   background: transparent;
   padding: 10px;
   width: 100%;
+  height: 100px;
+  resize: none;
 }
 
 .contactform input{

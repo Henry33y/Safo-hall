@@ -205,7 +205,7 @@
                             <input type="text" placeholder="Contact" id="contact" required>
                         </div>
     
-                        <div>
+                        <div class="Messagebox">
                             <textarea name="message" id="message" placeholder="Enter message" rows="5" required></textarea>
                         </div>
     
@@ -229,7 +229,7 @@
     
         <div class="developer">
             <p>
-                Copyright © 2024 Zeal Craft Inn | Developed by Zeal Craft Innovation
+                Copyright © 2024 Zeal Craft Innovation | Developed by Zeal Craft Innovation
     
             </p>
         </div>
