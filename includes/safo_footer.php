@@ -44,11 +44,7 @@
             </div>
             
             <div class="geo">
-                <iframe class="map"
-                src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d157002.4193117137!2d-0.3083672071753503!3d5.7335727208473015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d5.8381564!2d-0.1811195!4m5!1s0xfdf98c25650b221%3A0xf8af499d61918988!2sSafo%20Hall%2C%20Sowutoum!3m2!1d5.6268766!2d-0.2738696!5e0!3m2!1sen!2sgh!4v1716176853896!5m2!1sen!2sgh"
-                width="350" height="300" style="border:0;"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-               </iframe>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3338.860477753301!2d-0.27381696005399314!3d5.626553191961782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf98c25ce18e1d%3A0xa488794859304f7!2sPentecost%20University!5e0!3m2!1sen!2sgh!4v1718865542524!5m2!1sen!2sgh" width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         
