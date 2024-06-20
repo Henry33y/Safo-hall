@@ -17,38 +17,9 @@
     <title>Safo Hall</title>
 </head>
 <body class="min-vh-100 position-relative">
-    <header class="position-fixed top-0 w-100">
-        <nav class="navbar py-0">
-            <div class="nav-item ms-sm-4 logo-container d-flex">
-                <div class="logo text-white">
-                    <img class="img-fluid" src="assets/images/safo web logo.png" alt="">
-                </div>
-                <span class="d-flex justify-content-center align-items-center text-dark logo-text">SAFO HALL</span>
-            </div>
-            <ul class="nav d-none d-sm-flex">
-                <li class="nav-item"><a href="index.php" class="nav-link desktop-nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.php" class="nav-link desktop-nav-link">About Us</a></li>
-                <li class="nav-item"><a href="#" class="nav-link desktop-nav-link">Activities/Events</a></li>
-                <li class="nav-item"><a href="register.php" class="nav-link desktop-nav-link rounded-pill">Register</a></li>
-            </ul>
-            <div class="btn d-flex flex-column gap-1 hamburger-btn d-sm-none border-0">
-                <div class="hambar hambar1"></div>
-                <div class="hambar hambar2"></div>
-                <div class="hambar hambar3"></div>
-            </div>
-        </nav>
-    </header>
+    <?php require_once("includes/header_nav.php") ?>
+    
     <div>
-        <div class="mobile-nav-container d-sm-none position-fixed top-0 w-100">
-            <nav class="navbar mobile-nav border position-absolute justify-content-center rounded-3 shadow-lg bg-white">
-                <ul class="nav flex-column text-center">
-                    <li class="nav-item"><a class="nav-link mobile-nav-link" href="#">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link mobile-nav-link" href="about.html">ABOUT</a></li>
-                    <li class="nav-item"><a class="nav-link mobile-nav-link" href="#">ACTIVITIES/EVENTS</a></li>
-                    <li class="nav-item"><a class="nav-link mobile-nav-link" href="register.php">REGISTER</a></li>
-                </ul>
-            </nav>
-        </div>
         <main>
             <section class="hero-container">
                 <img class="img-fluid" src="assets/images/safo web image.jpg" alt="">
@@ -222,10 +193,7 @@
                 </div>
             </div>
         </main>
-        <footer class="myFooter position-relative text-center d-flex align-items-center justify-content-center">
-            <div class="footer_text">SAFO HALL</div>
-            <div class="position-absolute bottom-0 text-center w-100">&copy;Developed by ZEALCRAFT INNOVATIONS</div>
-        </footer>
+        <?php require_once("includes/safo_footer.php") ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

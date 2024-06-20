@@ -31,37 +31,7 @@
     <title>About</title>
 </head>
 <body class="min-vh-100 position-relative">
-    <header class="position-fixed top-0 w-100">
-        <nav class="navbar py-0">
-            <div class="nav-item ms-sm-4 logo-container d-flex">
-                <div class="logo text-white">
-                    <img class="img-fluid" src="assets/images/safo web logo.png" alt="">
-                </div>
-                <span class="d-flex justify-content-center align-items-center text-dark logo-text">SAFO HALL</span>
-            </div>
-            <ul class="nav d-none d-sm-flex">
-                <li class="nav-item"><a href="index.html" class="nav-link desktop-nav-link">HOME</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link desktop-nav-link">ABOUT US</a></li>
-                <li class="nav-item"><a href="#" class="nav-link desktop-nav-link">ACTIVITIES/EVENTS</a></li>
-                <li class="nav-item"><a href="register.php" class="nav-link desktop-nav-link rounded-pill">REGISTER</a></li>
-            </ul>
-            <div class="btn d-flex flex-column gap-1 hamburger-btn d-sm-none border-0">
-                <div class="hambar hambar1"></div>
-                <div class="hambar hambar2"></div>
-                <div class="hambar hambar3"></div>
-            </div>
-        </nav>
-    </header>
-    <div class="mobile-nav-container d-sm-none position-fixed top-0 w-100">
-        <nav class="navbar mobile-nav border position-absolute justify-content-center rounded-3 shadow-lg bg-white">
-            <ul class="nav flex-column text-center">
-                <li class="nav-item"><a class="nav-link mobile-nav-link" href="index.html">HOME</a></li>
-                <li class="nav-item"><a class="nav-link mobile-nav-link" href="about.html">ABOUT</a></li>
-                <li class="nav-item"><a class="nav-link mobile-nav-link" href="#">ACTIVITIES/EVENTS</a></li>
-                <li class="nav-item"><a class="nav-link mobile-nav-link" href="register.php">REGISTER</a></li>
-            </ul>
-        </nav>
-    </div>
+    <?php require_once("includes/header_nav.php") ?>
 
     <div class="header-image mt-5">
         <div id="profilepic">
@@ -168,72 +138,7 @@
             </div>
 
     </div>
-
-
-   
-    <footer class="footer">
-        <div id="footerHead">
-            <h3>Connect With US</h3>
-        </div>
-        <div class="socialMedia">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-youtube"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-solid fa-envelope"></i></a>
-        </div>
-        <hr>
-    
-         <div class="">
-    
-         </div>
-        <div class="footercontainer">
-            <div class="xyz">
-                <div class="contactform">
-                    <h3>Contact Us</h3>
-                    <form action="#" id="contact_form">
-                        <div>
-                            
-                            <input type="text" placeholder="Full name" id="fullname" required>
-                        </div>
-    
-                        <div>
-                            
-                            <input type="email" placeholder="Email Address" id="email" required>
-                        </div>
-    
-                        <div>
-                            <input type="text" placeholder="Contact" id="contact" required>
-                        </div>
-    
-                        <div class="Messagebox">
-                            <textarea name="message" id="message" placeholder="Enter message" rows="5" required></textarea>
-                        </div>
-    
-                        <button id="submitMessage" type="submit">Submit</button>
-                        
-                    </form>
-                </div>
-               
-            </div>
-            
-            <div class="geo">
-                <iframe class="map"
-                src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d157002.4193117137!2d-0.3083672071753503!3d5.7335727208473015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d5.8381564!2d-0.1811195!4m5!1s0xfdf98c25650b221%3A0xf8af499d61918988!2sSafo%20Hall%2C%20Sowutoum!3m2!1d5.6268766!2d-0.2738696!5e0!3m2!1sen!2sgh!4v1716176853896!5m2!1sen!2sgh"
-                width="350" height="300" style="border:0;"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-               </iframe>
-            </div>
-        </div>
-        
-        <hr>
-    
-        <div class="developer">
-            <p>
-                Copyright © 2024 Zeal Craft Innovation | Developed by Zeal Craft Innovation
-    
-            </p>
-        </div>
-    </footer>
+    <?php require_once("includes/safo_footer.php") ?>
     <script src="js/script.js"></script>
 </body>
 
