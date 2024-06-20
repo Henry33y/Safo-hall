@@ -33,7 +33,7 @@
 <body class="min-vh-100 position-relative registerBody">
   <nav class="navbar navbar-expand-lg registerNavBar py-0 shadow-sm position-fixed w-100 top-0 bg-white" style="z-index: 9;">
     <d class="container-fluid">
-      <a class="navbar-brand d-flex" href="index.html">
+      <a class="navbar-brand d-flex" href="index.php">
         <img class="d-inline-block logo img-fluid" style="height:auto;" src="./assets/images/safo web logo.png"
           alt=""><span class="logo-text d-flex align-items-center">SAFO HALL</span>
       </a>
@@ -44,7 +44,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="sidebarMenu">
         <ul class="nav navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link desktop-nav-link register_nav_link" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link desktop-nav-link register_nav_link" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link desktop-nav-link register_nav_link" href="register.php">Register</a>
