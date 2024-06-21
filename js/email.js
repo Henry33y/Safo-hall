@@ -2,7 +2,6 @@ const submitBtn = document.querySelector("#submitMessage")
 const form = document.querySelector("#contact_form")
 
 function sendMail() {
-    console.log("send mail")
     let params = {
         fullname: document.getElementById("fullname").value,
         email: document.getElementById("email").value,
@@ -14,9 +13,10 @@ function sendMail() {
         .then(function(response) {
             alert("Message sent Successfully!!!");
             console.log("Message sent successfully:", response);
+            form.reset()
         }, function(error) {
             console.error("Email sending failed:", error);
-            alert("Failed to save details. Please try again.");
+            alert("Failed to send message. Please try again.");
         });
 }
 
