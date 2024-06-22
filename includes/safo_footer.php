@@ -33,7 +33,7 @@
                         </div>
     
                         <div class="Messagebox">
-                            <textarea name="message" id="message" placeholder="Enter message" rows="5" required></textarea>
+                            <textarea name="message" id="message" placeholder="Enter message" rows="5" required ></textarea>
                         </div>
     
                         <button id="submitMessage" type="submit">Submit</button>
