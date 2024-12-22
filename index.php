@@ -56,7 +56,9 @@
                     </div>
                     <div class="col-12 col-md-4 px-0 px-md-4">
                         <h4>OUR CORE VALUES</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quo quod quas porro optio nisi voluptas veniam id dignissimos corporis. Odio, tenetur reiciendis eos amet minima modi ratione molestiae cumque.</p>
+                        <p>Inclusivity, Community, Safety, Growth, Respect, Empowerment, Sustainability, and Excellence.
+
+These values reflect your commitment to fostering a welcoming, secure, and enriching environment where residents can thrive personally and academically, while building meaningful connections and contributing to a sustainable and respectful community.</p>
                     </div>
                     <div class="col-12 col-md-4 px-0 px-md-4">
                         <h4>OUR MISSION</h4>
@@ -200,7 +202,7 @@
             <div class="text-center mt-5">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores atque magni ut quasi, rerum dolorum quibusdam dolorem rem eveniet soluta id praesentium, facere tenetur vel in voluptates? Aspernatur, error omnis?
                 <div class="text-center m-3">
-                    <a href="assets/COMPUTER NETWORKING COURSE OUTLINE.docx" class="btn downloadConstitution rounded-3" download>DOWNLOAD HALL CONSTITUTION</a>
+                    <a href="assets/Safo_Hall_Constitution.pdf" class="btn downloadConstitution rounded-3" download>DOWNLOAD HALL CONSTITUTION</a>
                 </div>
             </div>
         </main>
