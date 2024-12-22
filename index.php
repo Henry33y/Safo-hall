@@ -90,7 +90,7 @@
                   <div class="swiper-slide"><img src="assets/images/executives.jpg" alt=""></div>
                   <div class="swiper-slide"><img src="assets/images/emblem.jpeg" alt=""></div>
                   <div class="swiper-slide"><img src="assets/images/organizer1.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/president.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/images/President.jpg" alt=""></div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
