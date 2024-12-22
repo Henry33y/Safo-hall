@@ -116,12 +116,12 @@
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/president.jpg" class="card-img-top" alt="...">
+                                <img src="assets/images/President.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">President</h5>
                                   <p class="card-text">
                                     <h6 class="">
-                                        Ransford Koranteng
+                                        Bright Ackon
                                     </h6> 
                                    
                                   </p>
@@ -131,12 +131,12 @@
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/Vice_president.jpeg" class="card-img-top" alt="...">
+                                <img src="assets/images/Vice.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Vice President</h5>
                                     <p class="card-text text-center">
                                         <h6 class="">
-                                            Michael Kafui Yao Tsatsu
+                                            Isaac Asante Darko
                                         </h6> 
                                        
                                     </p>
@@ -151,7 +151,7 @@
                                   <h5 class="card-title">Financial Controller</h5>
                                   <p class="card-text">
                                     <h6 class="">
-                                        Kusi Danquah Stephen
+                                        Joshua Obeng
                                     </h6> 
                                     
                                   </p>
@@ -166,7 +166,7 @@
                                   <h5 class="card-title">Secretary</h5>
                                   <p class="card-text">
                                     <h6 class="">
-                                        Asare Ebenezer Addo
+                                        Dennis Antwi
                                     </h6> 
                                    
                                   </p>
