@@ -56,7 +56,9 @@
                     </div>
                     <div class="col-12 col-md-4 px-0 px-md-4">
                         <h4>OUR CORE VALUES</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quo quod quas porro optio nisi voluptas veniam id dignissimos corporis. Odio, tenetur reiciendis eos amet minima modi ratione molestiae cumque.</p>
+                        <p>Inclusivity, Community, Safety, Growth, Respect, Empowerment, Sustainability, and Excellence.
+
+These values reflect your commitment to fostering a welcoming, secure, and enriching environment where residents can thrive personally and academically, while building meaningful connections and contributing to a sustainable and respectful community.</p>
                     </div>
                     <div class="col-12 col-md-4 px-0 px-md-4">
                         <h4>OUR MISSION</h4>
@@ -90,7 +92,7 @@
                   <div class="swiper-slide"><img src="assets/images/executives.jpg" alt=""></div>
                   <div class="swiper-slide"><img src="assets/images/emblem.jpeg" alt=""></div>
                   <div class="swiper-slide"><img src="assets/images/organizer1.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/president.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/images/President.jpg" alt=""></div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
@@ -116,12 +118,12 @@
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/president.jpg" class="card-img-top" alt="...">
+                                <img src="assets/images/President.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">President</h5>
                                   <p class="card-text">
                                     <h6 class="">
-                                        Ransford Koranteng
+                                        Bright Ackon
                                     </h6> 
                                    
                                   </p>
@@ -131,12 +133,12 @@
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/Vice_president.jpeg" class="card-img-top" alt="...">
+                                <img src="assets/images/Vice.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Vice President</h5>
                                     <p class="card-text text-center">
                                         <h6 class="">
-                                            Michael Kafui Yao Tsatsu
+                                            Isaac Asante Darko
                                         </h6> 
                                        
                                     </p>
@@ -151,7 +153,7 @@
                                   <h5 class="card-title">Financial Controller</h5>
                                   <p class="card-text">
                                     <h6 class="">
-                                        Kusi Danquah Stephen
+                                        Joshua Obeng
                                     </h6> 
                                     
                                   </p>
@@ -166,7 +168,7 @@
                                   <h5 class="card-title">Secretary</h5>
                                   <p class="card-text">
                                     <h6 class="">
-                                        Asare Ebenezer Addo
+                                        Dennis Antwi
                                     </h6> 
                                    
                                   </p>
@@ -200,7 +202,7 @@
             <div class="text-center mt-5">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores atque magni ut quasi, rerum dolorum quibusdam dolorem rem eveniet soluta id praesentium, facere tenetur vel in voluptates? Aspernatur, error omnis?
                 <div class="text-center m-3">
-                    <a href="assets/COMPUTER NETWORKING COURSE OUTLINE.docx" class="btn downloadConstitution rounded-3" download>DOWNLOAD HALL CONSTITUTION</a>
+                    <a href="assets/Safo_Hall_Constitution.pdf" class="btn downloadConstitution rounded-3" download>DOWNLOAD HALL CONSTITUTION</a>
                 </div>
             </div>
         </main>
