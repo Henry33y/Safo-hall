@@ -428,6 +428,12 @@ textarea.form-control {
   position: absolute;
   display: none;
 }
+.form-control.is-invalid, .was-validated .form-control:invalid{
+  background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+.form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"]{
+  background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
 @media (max-width: 991px) {
   .wizard {
     max-width: 768px;
@@ -477,7 +483,7 @@ textarea.form-control {
   }
   .wizard > .steps {
     right: 50%;
-    top: 52%;
+    margin-top: 10px;
     transform: translateX(50%);
     z-index: 1 !important;
   }
