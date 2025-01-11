@@ -99,7 +99,7 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                 <div class="swiper-button-prev"></div>
             </div>
             <section class="w-100 my-5 py-5">
-                <h2 class="text-center executives_header">SAFO HALL EXECUTIVES FOR 2023/2024 ACADEMIC YEAR</h2>
+                <h2 class="text-center executives_header">SAFO HALL EXECUTIVES FOR 2024/2025 ACADEMIC YEAR</h2>
                 <div class="container-fluid px-0" >
                     <div class="row" id="profileContainer">
                         <div class="col-md-2 col-6 px-1">
