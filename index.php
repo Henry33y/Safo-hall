@@ -148,7 +148,7 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/fc.jpg" class="card-img-top" alt="...">
+                                <img src="assets/images/joshua.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">Financial Controller</h5>
                                   <p class="card-text">
@@ -178,12 +178,12 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/organizer2.jpg" class="card-img-top" alt="...">
+                                <img src="assets/images/rex.jpg" class="card-img-top" alt="...">
                                 <div class="card-body pb-5">
                                   <h5 class="card-title">Organizer</h5>
                                   <p class="card-text">
                                     <h6 class="">
-                                        Ebenezer Ofosu
+                                        Rexford Agyei
                                     </h6> 
                                   
                                   </p>
