@@ -1,9 +1,16 @@
 <?php
-    $host = 'localhost';
-    $db = 'safo_hall';
-    $user = 'Henry';
-    $pwd = '1234567';
-    $charset = 'utf8mb4';
+    require_once 'includes/loadenv.php';
+    try {
+        loadEnv(__DIR__ . '/../.env'); // Adjust the path if needed
+    } catch (Exception $e) {
+        die($e->getMessage());
+    }
+
+    $host = $_ENV['HOST'];
+    $db = $_ENV['DATABASE'];
+    $user = $_ENV['USER'];
+    $pwd = $_ENV['PASSWORD'];
+    $charset = $_ENV['CHARSET'];
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
@@ -19,5 +26,5 @@
     $crud = new crud($pdo);
     $user = new user($pdo);
 
-    $user->insertUser('admin','1234567');
+    $user->insertUser('zeal@safo2024','test123');
 ?>
