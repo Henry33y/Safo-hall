@@ -21,7 +21,7 @@
     <script type="text/javascript">
    (function(){
       emailjs.init({
-        publicKey: "R_QGTO1g1EEz-V9sK",
+        publicKey: "ZaRZoFXiWFtuyY6fk",
       });
    })();
 </script></div>
@@ -118,7 +118,7 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/President.jpg" class="card-img-top" alt="...">
+                                <img src="assets/images/President.jpg" class="card-img-top" alt="President">
                                 <div class="card-body">
                                   <h5 class="card-title">President</h5>
                                   <p class="card-text">
