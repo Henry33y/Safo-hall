@@ -111,6 +111,9 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                     <h6 class="">
                                         Rev. Augustine Arthur Norman
                                     </h6> 
+                                    <button class="contact_executive">
+                                            Contact
+                                        </button>
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
@@ -125,6 +128,9 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                     <h6 class="">
                                         Bright Ackon
                                     </h6> 
+                                    <button class="contact_executive">
+                                            Contact
+                                        </button>
                                    
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -140,6 +146,9 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         <h6 class="">
                                             Isaac Asante Darko
                                         </h6> 
+                                        <button class="contact_executive">
+                                            Contact
+                                        </button>
                                        
                                     </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -155,6 +164,9 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                     <h6 class="">
                                         Joshua Obeng
                                     </h6> 
+                                    <button class="contact_executive">
+                                            Contact
+                                        </button>
                                     
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -170,6 +182,9 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                     <h6 class="">
                                         Dennis Antwi
                                     </h6> 
+                                    <button class="contact_executive">
+                                            Contact
+                                        </button>
                                    
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -185,6 +200,9 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                     <h6 class="">
                                         Rexford Agyei
                                     </h6> 
+                                    <button class="contact_executive">
+                                            Contact
+                                        </button>
                                   
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
