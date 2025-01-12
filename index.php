@@ -68,15 +68,13 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
             </section>
             <div class="swiper mySwiper_desktop d-none d-md-block">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="assets/images/Safo1.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/Safo2.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/Safo3.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/safoimg.jpeg" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/images/UNFAMALIAR.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/images/FYNN.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/images/BROTHER'S KEEPER.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/images/DUES.jpg" alt=""></div>
                   <div class="swiper-slide"><img src="assets/images/safoimg1.jpeg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/executives.jpg" alt=""></div>
                   <div class="swiper-slide"><img src="assets/images/emblem.jpeg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/organizer1.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/president.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/images/FISHY.jpg" alt=""></div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
@@ -89,10 +87,9 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                   <div class="swiper-slide"><img src="assets/images/Safo3.jpg" alt=""></div>
                   <div class="swiper-slide"><img src="assets/images/safoimg.jpeg" alt=""></div>
                   <div class="swiper-slide"><img src="assets/images/safoimg1.jpeg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/executives.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/images/BROTHER'S KEEPER.jpg" alt=""></div>
                   <div class="swiper-slide"><img src="assets/images/emblem.jpeg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/organizer1.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/President.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/images/DUES.jpg" alt=""></div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
