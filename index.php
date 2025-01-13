@@ -144,7 +144,7 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                             Isaac Asante Darko
                                         </h6> 
                                         <button class="contact_executive">
-                                            Contact
+                                           <a href="https://wa.me/<599763047>">Contact</a> 
                                         </button>
                                        
                                     </p>
