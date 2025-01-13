@@ -136,7 +136,7 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/Vice.jpg" class="card-img-top" alt="...">
+                                <img src="assets/images/vice president.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Vice President</h5>
                                     <p class="card-text text-center">
