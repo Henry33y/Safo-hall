@@ -36,11 +36,11 @@
                 <img class="img-fluid" src="assets/images/safo web image.jpg" alt="">
                 <div class="position-relative">
                     <div class="hero_text_container px-2 px-md-5 position-absolute py-sm-0 py-4">
-                        <div class="text-light mb-2">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum delectus ex nobis hic inventore alias quos sint iure illo commodi, animi amet dicta odio. Perspiciatis dolorem cum quidem nihil dignissimos?
+                        <div class="hero_text text-light mb-2">
+                            Safo Hall is more than just a residence - it's a community. <br>Our website is your gateway to our world. Discover what makes us special, from our rich history to our modern facilities.
                         </div>
                         <div class="text-center text-sm-start">
-                            <a href="" class="btn btn-light me-3 my-2">READ MORE</a>
+                            <!-- <a href="" class="btn btn-light me-3 my-2">READ MORE</a> -->
                             <a href="register.php" class="btn btn-light my-2 d-none d-md-inline-block">CLICK HERE REGISTER AND BOOK ACCOMODATION</a>
                             <a href="register.php" class="btn btn-light my-2 d-md-none">REGISTER AND BOOK ACCOMODATION</a>
                         </div>
@@ -118,7 +118,7 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/President.jpg" class="card-img-top" alt="...">
+                                <img src="assets/images/president.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">President</h5>
                                   <p class="card-text">
@@ -215,7 +215,7 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                 </div>
             </section>
             <div class="text-center mt-5">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores atque magni ut quasi, rerum dolorum quibusdam dolorem rem eveniet soluta id praesentium, facere tenetur vel in voluptates? Aspernatur, error omnis?
+                Dive into the guiding principles and regulations that shape our vibrant Safo Hall community.
                 <div class="text-center m-3">
                     <a href="assets/Safo_Hall_Constitution.pdf" class="btn downloadConstitution rounded-3" download>DOWNLOAD HALL CONSTITUTION</a>
                 </div>

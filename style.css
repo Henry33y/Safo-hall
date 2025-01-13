@@ -146,6 +146,9 @@ header ul {
 .hero-container {
   margin-top: 60px;
 }
+.hero_text{
+  font-size: 1.3em;
+}
 .desktop-nav-link,
 .mobile-nav-link {
   color: black;
@@ -255,8 +258,8 @@ td a {
 }
 .hero_text_container {
   font-family: "Montserrat", sans-serif;
-  font-style: italic;
-  font-weight: 500;
+  /* font-style: italic; */
+  font-weight: 600;
   bottom: 20px;
 }
 .hero_text_container a {
@@ -318,6 +321,7 @@ td a {
 }
 .executives_header {
   font-weight: 800;
+  color: var(--safo-orange);
   margin-bottom: 25px;
 }
 .modal_close_btn {
@@ -830,7 +834,3 @@ scale: 1.1;
 background-color: #f15d23be;
 
 }
-
-
-
-
