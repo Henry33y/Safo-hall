@@ -105,12 +105,14 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                 <div class="card-body">
                                   <h5 class="card-title">Hall Tutor</h5>
                                   <p class="card-text">
-                                    <h6 class="">
+                                    <h6 class="executive_card_title">
                                         Rev. Augustine Arthur Norman
-                                    </h6> 
-                                    <button class="contact_executive">
+                                    </h6>
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
                                             Contact
                                         </button>
+                                    </div>
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
@@ -119,16 +121,17 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
                                 <img src="assets/images/president.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
+                                <div class="card-body executive_card_body">
                                   <h5 class="card-title">President</h5>
                                   <p class="card-text">
-                                    <h6 class="">
+                                    <h6 class="executive_card_title">
                                         Bright Ackon
-                                    </h6> 
-                                    <button class="contact_executive">
+                                    </h6>
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
                                             Contact
                                         </button>
-                                   
+                                    </div>
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
@@ -136,17 +139,18 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/Vice.jpg" class="card-img-top" alt="...">
+                                <img src="assets/images/Vice.webp" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Vice President</h5>
                                     <p class="card-text text-center">
-                                        <h6 class="">
+                                        <h6 class="classexecutive_card_title">
                                             Isaac Asante Darko
                                         </h6> 
-                                        <button class="contact_executive">
-                                           <a href="https://wa.me/<599763047>">Contact</a> 
-                                        </button>
-                                       
+                                        <div class="contact_executive_container">
+                                            <button class="contact_executive">
+                                                <a href="https://wa.me/<599763047>">Contact</a> 
+                                            </button>
+                                        </div>   
                                     </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                                 </div>
@@ -158,13 +162,14 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                 <div class="card-body">
                                   <h5 class="card-title">Financial Controller</h5>
                                   <p class="card-text">
-                                    <h6 class="">
+                                    <h6 class="executive_card_title">
                                         Joshua Obeng
                                     </h6> 
-                                    <button class="contact_executive">
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
                                             Contact
                                         </button>
-                                    
+                                    </div>
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
@@ -176,13 +181,14 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                 <div class="card-body">
                                   <h5 class="card-title">Secretary</h5>
                                   <p class="card-text">
-                                    <h6 class="">
+                                    <h6 class="executive_card_title">
                                         Dennis Antwi
                                     </h6> 
-                                    <button class="contact_executive">
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
                                             Contact
                                         </button>
-                                   
+                                    </div>
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
@@ -194,13 +200,14 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                 <div class="card-body pb-5">
                                   <h5 class="card-title">Organizer</h5>
                                   <p class="card-text">
-                                    <h6 class="">
+                                    <h6 class="executive_card_title">
                                         Rexford Agyei
                                     </h6> 
-                                    <button class="contact_executive">
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
                                             Contact
                                         </button>
-                                  
+                                    </div>
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>

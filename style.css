@@ -149,6 +149,9 @@ header ul {
 .hero_text{
   font-size: 1.3em;
 }
+.executive_card_body{
+  position: relative;
+}
 .desktop-nav-link,
 .mobile-nav-link {
   color: black;
@@ -307,7 +310,7 @@ td a {
 .downloadConstitution {
   background-color: var(--safo-orange);
   color: white;
-  width: max-content;
+  /* width: max-content; */
   font-weight: 600;
 }
 .downloadConstitution:hover {
@@ -817,6 +820,16 @@ input::placeholder{
 /*
 contact button styles
 */
+.contact_executive_container{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.executive_card_title{
+  margin-bottom: 50px;
+}
 
 .contact_executive{
   background-color: #f15f23;
