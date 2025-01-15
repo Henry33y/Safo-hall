@@ -76,24 +76,12 @@
         <hr>
             <h1>Safo Hall Anthem</h1>
             <p id="Anthem">
-                Lorem ipsum dolor sit amet
-                consectetur adipisicing elit.
-                Possimus excepturi nihil ipsum
-                maxime veniam mollitia eligendi
-                obcaecati veritatis,
-                rem cupiditate officiis est
-                dicta consectetur. Voluptas
-                accusamus minima eaque nesciunt
-                corrupti?
-                Lorem ipsum dolor sit amet
-                consectetur adipisicing elit.
-                Possimus excepturi nihil ipsum
-                maxime veniam mollitia eligendi
-                obcaecati veritatis,
-                rem cupiditate officiis est
-                dicta consectetur. Voluptas
-                accusamus minima eaque nesciunt
-                corrupti?
+             We are Safo Hall in PU <br>
+             We stand above the other halls <br>
+             Nobles Among Equal is our slogan <br>
+             We will stand to protect our image. <br>
+             Men of dignity, integrity and excellence <br>
+             We will rise to protect our image (2x)
             </p>
 
             <div>

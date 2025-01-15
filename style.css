@@ -619,6 +619,11 @@ div.dt-button-collection h3.not-top-heading {
   text-align: center;
 }
 
+#Anthem{
+text-align: center;
+font-size: larger;
+}
+
 .brief-Details_of_Safo p{
   font-family: "Montserrat", sans-serif;
   padding: 10px;
@@ -826,24 +831,37 @@ contact button styles
   left: 0;
   width: 100%;
   padding-bottom: 10px;
+  background-color: transparent;
+  color: white;
+  padding: 8px;
+
 }
 .executive_card_title{
   margin-bottom: 50px;
 }
 
-.contact_executive{
-  background-color: #f15f23;
+.whatsapp_link{
+  /* background-color: var(--safo-orange); */
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-decoration: none;
   color: white;
-  padding: 8px;
+}
+
+.contact_executive{
+  width: 100%;
+  cursor: pointer;
+  padding: 0 20px;
+  background-color: #f15f23;
   border: none;
-  border-radius: 5px;
-  width: 80%;
+  border-radius: 10px;
   transition: all 0.3s ease-in;
 }
 
+
 .contact_executive:hover{
-cursor: pointer;
 scale: 1.1;
-background-color: #f15d23be;
+background-color: #f15d23af;
 
 }

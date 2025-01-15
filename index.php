@@ -109,10 +109,10 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         Rev. Augustine Arthur Norman
                                     </h6>
                                     <div class="contact_executive_container">
-                                        <button class="contact_executive">
-                                            Contact
-                                        </button>
-                                    </div>
+                                            <button class="contact_executive">
+                                                <a class="whatsapp_link" href="https://wa.link/uzdldt" target="_blank">Contact</a> 
+                                            </button>
+                                        </div>  
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
@@ -128,10 +128,10 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         Bright Ackon
                                     </h6>
                                     <div class="contact_executive_container">
-                                        <button class="contact_executive">
-                                            Contact
-                                        </button>
-                                    </div>
+                                            <button class="contact_executive">
+                                                <a class="whatsapp_link" href="https://wa.link/wyshav" target="_blank">Contact</a> 
+                                            </button>
+                                        </div>  
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
@@ -139,7 +139,7 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                         </div>
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
-                                <img src="assets/images/Vice.webp" class="card-img-top" alt="...">
+                                <img src="assets/images/vice president.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Vice President</h5>
                                     <p class="card-text text-center">
@@ -148,31 +148,12 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         </h6> 
                                         <div class="contact_executive_container">
                                             <button class="contact_executive">
-                                                <a href="https://wa.me/0599763047">Contact</a> 
+                                                <a class="whatsapp_link" href="https://wa.link/0abtvn" target="_blank">Contact</a> 
                                             </button>
                                         </div>   
                                     </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 px-1">
-                            <div class="card myCard">
-                                <img src="assets/images/joshua.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Financial Controller</h5>
-                                  <p class="card-text">
-                                    <h6 class="executive_card_title">
-                                        Joshua Obeng
-                                    </h6> 
-                                    <div class="contact_executive_container">
-                                        <button class="contact_executive">
-                                            Contact
-                                        </button>
-                                    </div>
-                                  </p>
-                                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                            </div>
                             </div>
                         </div>
                         <div class="col-md-2 col-6 px-1">
@@ -185,15 +166,37 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         Dennis Antwi
                                     </h6> 
                                     <div class="contact_executive_container">
-                                        <button class="contact_executive">
-                                            Contact
-                                        </button>
-                                    </div>
+                                            <button class="contact_executive">
+                                                <a class="whatsapp_link" href="https://wa.link/ajqd7b" target="_blank">Contact</a> 
+                                            </button>
+                                        </div>  
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                             </div>
                         </div>
+
+                        
+                        <div class="col-md-2 col-6 px-1">
+                            <div class="card myCard">
+                                <img src="assets/images/joshua.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Financial Controller</h5>
+                                  <p class="card-text">
+                                    <h6 class="executive_card_title">
+                                        Joshua Obeng
+                                    </h6> 
+                                    <div class="contact_executive_container">
+                                            <button class="contact_executive">
+                                                <a class="whatsapp_link" href="https://wa.link/m75gef" target="_blank">Contact</a> 
+                                            </button>
+                                        </div>  
+                                  </p>
+                                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                            </div>
+                        </div>
+
                         <div class="col-md-2 col-6 px-1">
                             <div class="card myCard">
                                 <img src="assets/images/rex.jpg" class="card-img-top" alt="...">
@@ -204,10 +207,10 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         Rexford Agyei
                                     </h6> 
                                     <div class="contact_executive_container">
-                                        <button class="contact_executive">
-                                            Contact
-                                        </button>
-                                    </div>
+                                            <button class="contact_executive">
+                                                <a class="whatsapp_link" href="https://wa.link/h3ladd" target="_blank">Contact</a> 
+                                            </button>
+                                        </div>  
                                   </p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
