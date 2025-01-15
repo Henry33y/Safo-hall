@@ -21,7 +21,7 @@
     <script type="text/javascript">
    (function(){
       emailjs.init({
-        publicKey: "ZaRZoFXiWFtuyY6fk",
+        publicKey: "CGvBcyOQXvXlryGsk",
       });
    })();
 </script></div>
