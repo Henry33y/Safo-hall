@@ -146,6 +146,12 @@ header ul {
 .hero-container {
   margin-top: 60px;
 }
+.hero_text{
+  font-size: 1.3em;
+}
+.executive_card_body{
+  position: relative;
+}
 .desktop-nav-link,
 .mobile-nav-link {
   color: black;
@@ -255,8 +261,8 @@ td a {
 }
 .hero_text_container {
   font-family: "Montserrat", sans-serif;
-  font-style: italic;
-  font-weight: 500;
+  /* font-style: italic; */
+  font-weight: 600;
   bottom: 20px;
 }
 .hero_text_container a {
@@ -304,7 +310,7 @@ td a {
 .downloadConstitution {
   background-color: var(--safo-orange);
   color: white;
-  width: max-content;
+  /* width: max-content; */
   font-weight: 600;
 }
 .downloadConstitution:hover {
@@ -318,6 +324,7 @@ td a {
 }
 .executives_header {
   font-weight: 800;
+  color: var(--safo-orange);
   margin-bottom: 25px;
 }
 .modal_close_btn {
@@ -813,6 +820,16 @@ input::placeholder{
 /*
 contact button styles
 */
+.contact_executive_container{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.executive_card_title{
+  margin-bottom: 50px;
+}
 
 .contact_executive{
   background-color: #f15f23;
@@ -830,7 +847,3 @@ scale: 1.1;
 background-color: #f15d23be;
 
 }
-
-
-
-
