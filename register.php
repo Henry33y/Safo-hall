@@ -55,14 +55,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $roomNumber = $_POST['room_number'];
   }
 
-  $isSuccess = $crud->insertStudentInfo($firstName, $lastName, $studentId, $category, $level, $programme, $contact, $email, $parentName, $parentContact, $disability, $scholarshipSpecify, $roomNumber);
-  
-  if ($isSuccess) {
-    include 'includes/successMessage.php';
-    echo "<script>window.location.href='success.php'</script>";
-  } else {
-    include 'includes/errMessage.php';
-  }
+  // Store form data in the session or a temporary table to retrieve after payment
+  $_SESSION['form_data'] = $_POST;
+
+  // Redirect to the Paystack payment link
+  $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
+  echo "<script>window.location.href='$paymentLink'</script>";
+  exit;
 
 }
 ?>
