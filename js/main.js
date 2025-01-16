@@ -42,7 +42,7 @@ $(function () {
           return true;
       },
       onFinished: function (event, currentIndex) {
-          alert("Submitted!");
+        //   alert("Submitted!");
       }
   });
 
