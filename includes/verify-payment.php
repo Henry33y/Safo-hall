@@ -5,6 +5,8 @@ error_reporting(E_ALL);
 require_once __DIR__.'/db_conn.php';
 require_once __DIR__. '/session.php';
 
+echo __DIR__;
+
 $paystackSecretKey = 'sk_live_956a88d5f75a2cfc07f189c166af748633f74b80';
 
 // Get the reference from the query string
