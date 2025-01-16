@@ -1,5 +1,5 @@
 <?php
-    require_once 'includes/loadenv.php';
+    require_once __DIR__.'/loadenv.php';
     try {
         loadEnv(__DIR__ . '/../.env'); // Adjust the path if needed
     } catch (Exception $e) {
