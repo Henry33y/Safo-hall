@@ -108,7 +108,7 @@ if ($result && $result['status'] && $result['data']['status'] == 'success') {
 
         if ($isSuccess) {
             include 'includes/successMessage.php';
-            echo "<script>window.location.href='success.php'</script>";
+            echo "<script>window.location.href='../success.php'</script>";
         } else {
             include 'includes/errMessage.php';
         }
