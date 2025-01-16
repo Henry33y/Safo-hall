@@ -14,16 +14,53 @@ if (!$transactionRef) {
 // Verify the payment with Paystack
 $verificationUrl = "https://api.paystack.co/transaction/verify/$transactionRef";
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $verificationUrl);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Authorization: Bearer $paystackSecretKey",
-]);
+try {
+    // Initialize cURL
+    $ch = curl_init();
 
-$response = curl_exec($ch);
-curl_close($ch);
+    if (!$ch) {
+        throw new Exception("Failed to initialize cURL.");
+    }
 
+    // Set cURL options
+    curl_setopt($ch, CURLOPT_URL, $verificationUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "Authorization: Bearer $paystackSecretKey",
+    ]);
+
+    // Execute cURL
+    $response = curl_exec($ch);
+
+    // Check for cURL errors
+    if ($response === false) {
+        throw new Exception("cURL Error: " . curl_error($ch));
+    }
+
+    // Decode the response
+    $result = json_decode($response, true);
+
+    // Check for JSON decode errors
+    if ($result === null) {
+        throw new Exception("JSON Decode Error: " . json_last_error_msg());
+    }
+
+    // Check Paystack API response
+    if (!$result['status']) {
+        throw new Exception("Payment verification failed: " . $result['message']);
+    }
+
+    // Close the cURL handle
+    curl_close($ch);
+
+    // Proceed with your logic
+    echo "Payment verified successfully!";
+
+} catch (Exception $e) {
+    // Handle exceptions
+    error_log($e->getMessage()); // Log the error for debugging
+    die("Error occurred: " . $e->getMessage());
+}    
 $result = json_decode($response, true);
 
 if ($result && $result['status'] && $result['data']['status'] == 'success') {
