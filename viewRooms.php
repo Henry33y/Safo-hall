@@ -32,8 +32,8 @@
                 <td><?php echo $r['current_students'] ?></td>
                 <td><?php echo $r['max_students'] ?></td>
                 <td>
-                    <!-- <a title="View" href="view.php?id=<?php echo $r['id'] ?>" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a> -->
                     <a title="Edit" href="editRoom.php?no=<?php echo $r['room_number'] ?>" class="btn btn-success">Edit<i class="ms-2 bi bi-pencil-square"></i></a>
+                    <a title="Lock" href="" class="btn btn-warning"><i class="bi bi-lock-fill"></i></a>
                     <!-- <a title="Delete" onclick="return confirm('Are you sure you want to delete this record? This action cannot be reversed.')" href="delete.php?id=<?php echo $r['id'] ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a> -->
                 </td>
             </tr>

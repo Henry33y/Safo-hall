@@ -2,12 +2,16 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-echo __DIR__;
 require_once __DIR__.'/db_conn.php';
 require_once __DIR__. '/session.php';
+require_once __DIR__.'/loadenv.php';
+try {
+    loadEnv(__DIR__ . '/../.env'); // Adjust the path if needed
+} catch (Exception $e) {
+    die($e->getMessage());
+}
 
-
-$paystackSecretKey = 'sk_live_956a88d5f75a2cfc07f189c166af748633f74b80';
+$paystackSecretKey = $_ENV['PAYSTACK_SECRET_KEY'];
 
 // Get the reference from the query string
 $transactionRef = $_GET['reference'] ?? null;
@@ -58,9 +62,6 @@ try {
     // Close the cURL handle
     curl_close($ch);
 
-    // Proceed with your logic
-    echo "Payment verified successfully!";
-
 } catch (Exception $e) {
     // Handle exceptions
     error_log($e->getMessage()); // Log the error for debugging
@@ -71,7 +72,6 @@ $result = json_decode($response, true);
 if ($result && $result['status'] && $result['data']['status'] == 'success') {
     // Payment was successful
     $formData = $_SESSION['form_data'] ?? null;
-    var_dump($_SESSION);
 
     if ($formData) {
         // Extract stored form data
