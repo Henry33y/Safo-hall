@@ -71,7 +71,7 @@ $result = json_decode($response, true);
 if ($result && $result['status'] && $result['data']['status'] == 'success') {
     // Payment was successful
     $formData = $_SESSION['form_data'] ?? null;
-    var_dump($_SESSION['form_data']);
+    var_dump($_SESSION);
 
     if ($formData) {
         // Extract stored form data
