@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 $title = 'Register';
 
 require_once 'includes/session.php';
-session_destroy();
+// session_destroy();
 require_once 'includes/header.php';
 require_once 'includes/db_conn.php';
 $firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $roomNumber = '';
