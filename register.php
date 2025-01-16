@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 $title = 'Register';
 
 require_once 'includes/session.php';
@@ -57,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
   // Store form data in the session or a temporary table to retrieve after payment
   $_SESSION['form_data'] = $_POST;
+  var_dump($_POST);
 
   // Redirect to the Paystack payment link
   $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
