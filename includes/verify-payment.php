@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 echo __DIR__;
 require_once __DIR__.'/db_conn.php';
-// require_once __DIR__. '/session.php';
+require_once __DIR__. '/session.php';
 
 
 $paystackSecretKey = 'sk_live_956a88d5f75a2cfc07f189c166af748633f74b80';
