@@ -26,5 +26,5 @@
     $crud = new crud($pdo);
     $user = new user($pdo);
 
-    $user->insertUser('zeal@safo2024','test123');
+    $user->insertUser('zeal2025','zeal@safo2025');
 ?>
