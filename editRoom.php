@@ -7,6 +7,7 @@ require_once 'includes/auth_check.php';
 require_once 'includes/db_conn.php';
 $roomNumber = $currentStudents = $maxStudents = '';
 if(isset($_POST['submit'])){
+    $error = false;
     if(!empty($_POST['room_number'])){
         $roomNumber = $_POST['room_number'];
     }
@@ -16,22 +17,29 @@ if(isset($_POST['submit'])){
     if(!empty($_POST['max_students'])){
         $maxStudents = $_POST['max_students'];
     }
-    
 
-    $result = $crud->updateRoomDetails($roomNumber, $currentStudents, $maxStudents);
-    if($result){
-        echo "<script>window.location.href='viewRooms.php'</script>";;
-    }else{
-        include 'includes/errMessage.php';
+    // Server-side validation
+    if ($currentStudents > $maxStudents) {
+        $error = true;
+        echo "<script>alert('Current students cannot exceed maximum students.');</script>";
+    }
+
+    if (!$error) {
+        $result = $crud->updateRoomDetails($roomNumber, $currentStudents, $maxStudents);
+        if($result){
+            echo "<script>window.location.href='viewRooms.php'</script>";
+        } else {
+            include 'includes/errMessage.php';
+        }
     }
 }
 
-    if(!isset($_GET['no'])){
-        include 'includes/errMessage.php';
-    }
-    else{
-        $roomNumber = $_GET['no'];
-        $roomInfo = $crud->getRoomDetailsByRoomNumber($roomNumber);
+if(!isset($_GET['no'])){
+    include 'includes/errMessage.php';
+}
+else{
+    $roomNumber = $_GET['no'];
+    $roomInfo = $crud->getRoomDetailsByRoomNumber($roomNumber);
 ?>
 
 
@@ -44,15 +52,15 @@ if(isset($_POST['submit'])){
                 <div>
                     <label for="current_student" class="form-label">Current Students</label>
                     <div>
-                        <input type="text" name="current_students" id="current_students" value="<?php echo $roomInfo['current_students'] ?>" class="form-control pe-5" required>
+                        <input type="number" name="current_students" id="current_students" value="<?php echo $roomInfo['current_students'] ?>" min="0" max="<?php echo $roomInfo['max_students'] ?>" class="form-control pe-5" required>
                         <div class="invalid-feedback">Wrong Input</div>
                     </div>
                 </div>
                 <div>
                     <label for="max_students" class="form-label">Maximum Students</label>
                     <div>
-                        <input type="text" name="max_students" id="max_students" value="<?php echo $roomInfo['max_students'] ?>" class="form-control" required>
-                        <div class="invalid-feedback">Wrong Input</div>
+                        <input type="number" name="max_students" id="max_students" value="<?php echo $roomInfo['max_students'] ?>" class="form-control" required>
+                        <div class="invalid-feedback">Maximum Students must not be empty</div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end mt-3">
@@ -65,4 +73,42 @@ if(isset($_POST['submit'])){
 <?php } ?>
 <br>
 <br>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#register_form');
+    const currentStudents = document.querySelector('#current_students');
+    const maxStudents = document.querySelector('#max_students');
+    const currentStudentsFeedback = currentStudents.nextElementSibling;
+
+    // Function to validate current_students against max_students
+    function validateStudents() {
+        const current = parseInt(currentStudents.value, 10);
+        const max = parseInt(maxStudents.value, 10);
+
+        if (current > max) {
+            currentStudents.setCustomValidity("Invalid");
+            currentStudentsFeedback.textContent = "Current students cannot exceed maximum students.";
+        } else {
+            currentStudents.setCustomValidity("");
+            currentStudentsFeedback.textContent = "Current students must not be empty"; // Reset default message if valid
+        }
+    }
+
+    // Add input event listeners for validation
+    currentStudents.addEventListener('input', validateStudents);
+    maxStudents.addEventListener('input', validateStudents);
+
+    // Bootstrap validation on form submission
+    form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        form.classList.add('was-validated'); // Add Bootstrap validation styles
+    });
+});
+
+
+</script>
 <?php require_once './includes/footer.php';?>

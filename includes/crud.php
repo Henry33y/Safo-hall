@@ -176,8 +176,10 @@
                 $stmt->bindparam(':roomNumber', $roomNumber);
                 $stmt->bindparam(':currentStudents', $currentStudents);
                 $stmt->execute();
+                return true;
             } catch (PDOException $e) {
                 echo $e->getMessage();
+                return false;
             }
         }
 
