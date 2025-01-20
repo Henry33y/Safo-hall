@@ -9,7 +9,7 @@
         $id = $_GET['id'];
         $result = $crud->deleteStudentRecord($id);
         if($result){
-            echo "<script>window.location.href='viewRegisteredStudents.php'</script>";
+            echo "<script>window.location.href='viewRegisteredStudents'</script>";
         }
         else{
             include 'includes/errMessage.php';

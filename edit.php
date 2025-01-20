@@ -1,5 +1,5 @@
 <?php
-$title = 'Edit Record';
+$title = 'Edit Record | Safo Hall Pentvars';
 
 require_once 'includes/session.php';
 require_once 'includes/header.php';
@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
 
     $result = $crud->editStudentDetails($id,$firstName,$lastName,$studentId,$category,$level,$programme,$contact,$email,$parentName,$parentContact,$disability,$scholarshipSpecify,$oldRoomNumber,$newRoomNumber);
     if($result){
-        echo "<script>window.location.href='viewRegisteredStudents.php'</script>";
+        echo "<script>window.location.href='viewRegisteredStudents'</script>";
     }else{
         include 'includes/errMessage.php';
     }
@@ -83,7 +83,7 @@ if(isset($_POST['submit'])){
     <main class="pt-3">
         <h2 class="text-center">Edit Record</h2>
         <div class="d-flex justify-content-center justify-content-center">
-            <form action="edit.php" method="post" id="register_form" class="form py-3 px-5 rounded-3 shadow-lg bg-white needs-validation" novalidate>
+            <form action="edit" method="post" id="register_form" class="form py-3 px-5 rounded-3 shadow-lg bg-white needs-validation" novalidate>
                 <input type="hidden" name="id" value="<?php echo $studentInfo['id'] ?>">
                 <div>
                     <label for="first_name" class="form-label">First Name</label>
@@ -271,7 +271,7 @@ if(isset($_POST['submit'])){
                     </div>
                 </div>
                 <div class="d-flex justify-content-end mt-3">
-                    <a href="viewRegisteredStudents.php" class="btn btn-info me-3">Back To List</a>
+                    <a href="viewRegisteredStudents" class="btn btn-info me-3">Back To List</a>
                     <input type="submit" name="submit" value="Save Changes" class="btn btn-success">
                 </div>
             </form>

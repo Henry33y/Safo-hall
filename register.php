@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$title = 'Register';
+$title = 'Register | Safo Hall Pentvars';
 
 require_once 'includes/session.php';
 // session_destroy();
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
 <body>
   <div class="wrapper">
-    <form action="register.php" method="post" class="needs-validation" id="wizard" novalidate>
+    <form action="register" method="post" class="needs-validation" id="wizard" novalidate>
       <h2></h2>
       <section>
         <div class="inner">

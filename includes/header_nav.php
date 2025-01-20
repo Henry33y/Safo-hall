@@ -7,10 +7,10 @@
             <span class="d-flex justify-content-center align-items-center text-dark logo-text">SAFO HALL</span>
         </div>
         <ul class="nav d-none d-sm-flex">
-            <li class="nav-item"><a href="index.php" class="nav-link desktop-nav-link">Home</a></li>
-            <li class="nav-item"><a href="about.php" class="nav-link desktop-nav-link">About Us</a></li>
+            <li class="nav-item"><a href="/" class="nav-link desktop-nav-link">Home</a></li>
+            <li class="nav-item"><a href="about" class="nav-link desktop-nav-link">About Us</a></li>
             <li class="nav-item"><a href="#" class="nav-link desktop-nav-link">Activities/Events</a></li>
-            <li class="nav-item"><a href="register.php" class="nav-link desktop-nav-link rounded-pill">Register</a></li>
+            <li class="nav-item"><a href="register" class="nav-link desktop-nav-link rounded-pill">Register</a></li>
         </ul>
         <div class="btn d-flex flex-column gap-1 hamburger-btn d-sm-none border-0">
             <div class="hambar hambar1"></div>

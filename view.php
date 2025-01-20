@@ -1,5 +1,5 @@
 <?php
-    $title = 'View Record';
+    $title = 'View Record | Safo Hall Pentvars';
     require_once 'includes/session.php';
     require_once 'includes/header.php';
     require_once 'includes/auth_check.php';
@@ -36,8 +36,8 @@
     </div>
     <br>
     <div>
-        <a href="viewRegisteredStudents.php" class="btn btn-info">Back to List</a>
-        <a href="edit.php?id=<?php echo $result['id'] ?>" class="btn btn-warning">Edit</a>
+        <a href="viewRegisteredStudents" class="btn btn-info">Back to List</a>
+        <a href="edit?id=<?php echo $result['id'] ?>" class="btn btn-warning">Edit</a>
         <a onclick="return confirm('Are you sure you want to delete this record? This action cannot be reversed.')" href="delete.php?id=<?php echo $result['id'] ?>" class="btn btn-danger">Delete</a>
     </div>
 </div>

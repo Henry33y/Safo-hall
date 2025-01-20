@@ -1,5 +1,5 @@
 <?php 
-    $title = 'Dashboard';
+    $title = 'Dashboard | Safo Hall Pentvars';
 
     require_once 'includes/session.php';
     require_once 'includes/header.php';

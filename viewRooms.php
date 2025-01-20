@@ -1,5 +1,5 @@
 <?php 
-    $title = 'Rooms Info';
+    $title = 'Rooms Info | Safo Hall Pentvars';
     
     require_once 'includes/session.php';
     require_once 'includes/header.php';
@@ -59,8 +59,8 @@
                     }
                 ?></td>
                 <td>
-                    <a title="Edit" href="editRoom.php?no=<?php echo $r['room_number'] ?>" class="btn btn-success">Edit<i class="ms-2 bi bi-pencil-square"></i></a>
-                    <a title="Lock" href="viewRooms.php?lock=<?php echo $r['room_number'] ?>&max=<?php echo $r['max_students']; ?>" class="btn btn-warning"><i class="bi bi-lock-fill"></i></a>
+                    <a title="Edit" href="editRoom?no=<?php echo $r['room_number'] ?>" class="btn btn-success">Edit<i class="ms-2 bi bi-pencil-square"></i></a>
+                    <a title="Lock" href="viewRooms?lock=<?php echo $r['room_number'] ?>&max=<?php echo $r['max_students']; ?>" class="btn btn-warning"><i class="bi bi-lock-fill"></i></a>
                     <!-- <a title="Delete" onclick="return confirm('Are you sure you want to delete this record? This action cannot be reversed.')" href="delete.php?id=<?php echo $r['id'] ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a> -->
                     <!-- <input type="text" value="<?php echo $r['room_number'] ?>" id="lock_room_number" hidden> -->
                 </td>

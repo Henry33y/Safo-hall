@@ -1,5 +1,5 @@
 <?php
-    $title = 'User Login';
+    $title = 'User Login | Safo Hall Pentvars';
 
     require_once 'includes/session.php';
     require_once 'includes/header.php';
@@ -16,7 +16,7 @@
         }else{
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $result['id'];
-            echo "<script>window.location.href='viewRegisteredStudents.php'</script>";
+            echo "<script>window.location.href='viewRegisteredStudents'</script>";
         }
     }
 
@@ -25,7 +25,7 @@
 
 <div class="d-flex justify-content-center">
 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" class="form needs-validation shadow p-3 mt-4 bg-white rounded-2" id="login_form" novalidate method="POST">
-        <h1 class="text-center"><?php echo $title ?></h1>
+        <h1 class="text-center">Admin Login</h1>
         <p class="text-center text-danger">For Administrators only!</p>
         <div>
             <div>

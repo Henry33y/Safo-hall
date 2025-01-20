@@ -1,5 +1,5 @@
 <?php
-$title = 'Edit Room';
+$title = 'Edit Room | Safo Hall Pentvars';
 
 require_once 'includes/session.php';
 require_once 'includes/header.php';
@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
     if (!$error) {
         $result = $crud->updateRoomDetails($roomNumber, $currentStudents, $maxStudents);
         if($result){
-            echo "<script>window.location.href='viewRooms.php'</script>";
+            echo "<script>window.location.href='viewRooms'</script>";
         } else {
             include 'includes/errMessage.php';
         }
@@ -46,7 +46,7 @@ else{
     <main class="pt-3">
         <h2 class="text-center"><?php echo $title ?></h2>
         <div class="d-flex justify-content-center justify-content-center">
-            <form action="editRoom.php" method="post" id="register_form" class="form py-3 px-5 rounded-3 shadow-lg bg-white needs-validation" novalidate>
+            <form action="editRoom" method="post" id="register_form" class="form py-3 px-5 rounded-3 shadow-lg bg-white needs-validation" novalidate>
                 <input type="hidden" name="room_number" value="<?php echo $roomInfo['room_number'] ?>">
                 <div style="font-weight: bold;" class="my-3">Room Number: <?php echo $roomInfo['room_number'] ?></div>
                 <div>
@@ -64,7 +64,7 @@ else{
                     </div>
                 </div>
                 <div class="d-flex justify-content-end mt-3">
-                    <a href="viewRooms.php" class="btn btn-info me-3">Back To List</a>
+                    <a href="viewRooms" class="btn btn-info me-3">Back To List</a>
                     <input type="submit" name="submit" value="Save Changes" class="btn btn-success">
                 </div>
             </form>

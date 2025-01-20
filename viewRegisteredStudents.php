@@ -1,5 +1,5 @@
 <?php
-    $title = 'Student Info';
+    $title = 'Student Info | Safo Hall Pentvars';
     require_once 'includes/session.php';
     require_once 'includes/header.php';
     require_once 'includes/auth_check.php';
@@ -11,7 +11,7 @@
 <div class="container-xxl">
     <div class="d-flex justify-content-between">
         <h3 class="m-0 d-flex align-items-center">All Registered Students</h3>
-        <a href="register.php" class="d-flex align-items-center btn btn-success" style="font-size: 0.9em;"><span class="d-md-inline d-none">Add New Student</span><i class="bi bi-plus ms-md-2 fs-4"></i></a>
+        <a href="register" class="d-flex align-items-center btn btn-success" style="font-size: 0.9em;"><span class="d-md-inline d-none">Add New Student</span><i class="bi bi-plus ms-md-2 fs-4"></i></a>
     </div>
     <div class="py-3">
         <table id="myTable" class="table table-striped table-bordered no-wrap">
@@ -57,8 +57,8 @@
                     <td><?php echo $r['scholarship'] ?></td>
                     <td><?php echo $r['registered_at'] ?></td>
                     <td style="font-size: 1.1em;">
-                        <a title="View" href="view.php?id=<?php echo $r['id'] ?>" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                        <a title="Edit" href="edit.php?id=<?php echo $r['id'] ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                        <a title="View" href="view?id=<?php echo $r['id'] ?>" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
+                        <a title="Edit" href="edit?id=<?php echo $r['id'] ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                         <a title="Delete" onclick="return confirm('Are you sure you want to delete this record? This action cannot be reversed.')" href="delete.php?id=<?php echo $r['id'] ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
                     </td>
                 </tr>

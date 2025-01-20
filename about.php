@@ -28,7 +28,7 @@
       });
    })();
 </script>
-    <title>About</title>
+    <title>About | Safo Hall Pentvars</title>
 </head>
 <body class="min-vh-100 position-relative">
     <?php require_once("includes/header_nav.php") ?>

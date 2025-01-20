@@ -33,7 +33,7 @@
 <body class="min-vh-100 position-relative registerBody">
   <nav class="navbar navbar-expand-lg registerNavBar py-0 shadow-sm position-fixed w-100 top-0 bg-white" style="z-index: 9;">
     <d class="container-fluid">
-      <a class="navbar-brand d-flex" href="index.php">
+      <a class="navbar-brand d-flex" href="/">
         <img class="d-inline-block logo img-fluid" style="height:auto;" src="./assets/images/safo web logo.png"
           alt=""><span class="logo-text d-flex align-items-center">SAFO HALL</span>
       </a>
@@ -44,28 +44,28 @@
       <div class="collapse navbar-collapse justify-content-end" id="sidebarMenu">
         <ul class="nav navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link desktop-nav-link register_nav_link" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link desktop-nav-link register_nav_link" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link desktop-nav-link register_nav_link" href="register.php">Register</a>
+            <a class="nav-link desktop-nav-link register_nav_link" href="register">Register</a>
           </li>
-          <?php if(isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'viewRegisteredStudents.php'){?>
+          <?php if(isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'viewRegisteredStudents'){?>
           <li class="nav-item">
-            <a class="nav-link desktop-nav-link register_nav_link" href="viewRegisteredStudents.php">Student Info</a>
+            <a class="nav-link desktop-nav-link register_nav_link" href="viewRegisteredStudents">Student Info</a>
           </li>
           <?php }else{
             echo '';
           } ?>
-          <?php if(isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'viewRooms.php'){?>
+          <?php if(isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != 'viewRooms'){?>
           <li class="nav-item">
-            <a class="nav-link desktop-nav-link register_nav_link" href="viewRooms.php">Rooms</a>
+            <a class="nav-link desktop-nav-link register_nav_link" href="viewRooms">Rooms</a>
           </li>
           <?php } else{ echo '';}?>
           <li class="nav-item d-lg-inline-block">
             <?php
             if (!isset($_SESSION['username'])) {
               ?>
-              <a class="nav-link desktop-nav-link register_nav_link" href="login.php">Login</a>
+              <a class="nav-link desktop-nav-link register_nav_link" href="login">Login</a>
             <?php } else { ?>
               <div class="dropdown d-none d-lg-block">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,19 +74,19 @@
                     <?php } ?>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="adduser.php"><i class="bi bi-person-add me-2"></i>Add User</a></li>
+                    <li><a class="dropdown-item" href="adduser"><i class="bi bi-person-add me-2"></i>Add User</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="logout.php"><i class="bi bi-power me-2"></i>Logout</a></li>
+                    <li><a class="dropdown-item" href="logout"><i class="bi bi-power me-2"></i>Logout</a></li>
                 </ul>
               </div>
               
-              <!-- <a class="nav-item nav-link desktop-nav-link register_nav_link" href="logout.php">Logout</a> -->
+              <!-- <a class="nav-item nav-link desktop-nav-link register_nav_link" href="logout">Logout</a> -->
             </li>
             <li class="nav-item d-lg-none">
-              <a class="nav-link desktop-nav-link register_nav_link" href="adduser.php"><i class="bi bi-person-add me-2"></i>Add User</a>
+              <a class="nav-link desktop-nav-link register_nav_link" href="adduser"><i class="bi bi-person-add me-2"></i>Add User</a>
             </li>
             <li class="nav-item d-lg-none">
-              <a class="nav-link desktop-nav-link register_nav_link" href="logout.php"><i class="bi bi-power me-2"></i>Logout</a>
+              <a class="nav-link desktop-nav-link register_nav_link" href="logout"><i class="bi bi-power me-2"></i>Logout</a>
             </li>
             <?php } ?>
 

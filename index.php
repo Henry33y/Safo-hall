@@ -25,7 +25,7 @@
       });
    })();
 </script></div>
-    <title>Safo Hall</title>
+    <title>Home | Safo Hall Pentvars</title>
 </head>
 <body class="min-vh-100 position-relative">
     <?php require_once("includes/header_nav.php") ?>
@@ -41,8 +41,8 @@
                         </div>
                         <div class="text-center text-sm-start">
                             <!-- <a href="" class="btn btn-light me-3 my-2">READ MORE</a> -->
-                            <a href="register.php" class="btn btn-light my-2 d-none d-md-inline-block">CLICK HERE REGISTER AND BOOK ACCOMODATION</a>
-                            <a href="register.php" class="btn btn-light my-2 d-md-none">REGISTER AND BOOK ACCOMODATION</a>
+                            <a href="register" class="btn btn-light my-2 d-none d-md-inline-block">CLICK HERE REGISTER AND BOOK ACCOMODATION</a>
+                            <a href="register" class="btn btn-light my-2 d-md-none">REGISTER AND BOOK ACCOMODATION</a>
                         </div>
                     </div>
                 </div>
