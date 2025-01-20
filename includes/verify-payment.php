@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 require_once __DIR__.'/db_conn.php';
 require_once __DIR__. '/session.php';
 require_once __DIR__.'/loadenv.php';
+require_once __DIR__.'/sms_config.php';
 try {
     loadEnv(__DIR__ . '/../.env'); // Adjust the path if needed
 } catch (Exception $e) {
@@ -108,6 +109,14 @@ if ($result && $result['status'] && $result['data']['status'] == 'success') {
 
         if ($isSuccess) {
             include 'includes/successMessage.php';
+            // Send SMS notification
+            $message = "Dear $firstName, your payment and registration was successful. Your room number is $roomNumber. Welcome to SAFO HALL.";
+            $response = sendSms($contact, $message);
+            if ($response) {
+                error_log("SMS notification sent: $response");
+            } else {
+                error_log("Failed to send SMS notification.");
+            }
             echo "<script>window.location.href='../success.php'</script>";
         } else {
             include 'includes/errMessage.php';
