@@ -1,9 +1,11 @@
 <?php
-    $title = 'User Login | Safo Hall Pentvars';
+    $title = 'Admin Login | Safo Hall Pentvars';
 
     require_once 'includes/session.php';
     require_once 'includes/header.php';
     require_once 'includes/db_conn.php';
+    require_once 'includes/errorToast.php';
+
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $username = strtolower(trim($_POST['username']));
         $password = $_POST['password'];
@@ -12,7 +14,7 @@
         $result = $user->getUser($username,$new_password);
 
         if(!$result){
-            echo '<div class="alert alert-danger">Username or password is incorrect! Please try again</div>';
+            displayErrorToast('Invalid Username or Password');
         }else{
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $result['id'];
@@ -23,7 +25,7 @@
 ?>
 
 
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center mb-4">
 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" class="form needs-validation shadow p-3 mt-4 bg-white rounded-2" id="login_form" novalidate method="POST">
         <h1 class="text-center">Admin Login</h1>
         <p class="text-center text-danger">For Administrators only!</p>
@@ -33,40 +35,51 @@
                 <input type="text" name="username" class="form-control" required value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['username'];?>">
                 <div class="invalid-feedback">Username cannot be empty</div>
             </div>
-            <div>
+            <div class="mb-4">
                 <label for="" class="form-label">Password</label>
-                <input type="password" name="password" id="password" class="form-control" required>
-                <div class="invalid-feedback">Password cannot be empty</div>
-                <input type="checkbox" class="me-2" id="showPassword"><span class="text-muted">Show Password</span>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" 
+                           class="form-control" required>
+                    <button type="button" class="btn btn-outline-secondary toggle-password">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                    <div class="invalid-feedback">Password cannot be empty</div>
+                </div>
             </div>
-            <input class="btn btn-primary w-100" type="submit" name="submit">
+            <input class="btn btn-primary w-100 border-0" type="submit" name="submit">
         </div>
         <!--<a href="">Forgot Password</a>-->
     </form>
 </div>
 
 <script defer>
-    const form = document.getElementById('login_form');
-    const showPasswordRadio = document.getElementById('showPassword');
-    const passwordInput = document.getElementById('password');
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('#login_form');
+        const togglePasswordButtons = document.querySelectorAll('.toggle-password');
 
-    form.addEventListener('submit', (e) => {
-    if (!form.checkValidity()) {
-      e.preventDefault()
-      e.stopPropagation()
-    }
+        // Bootstrap Form Validation
+        form.addEventListener('submit', (event) => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated'); // Add validation styling
+        });
 
-    form.classList.add('was-validated')
-  }, false)
+        // Toggle Password Visibility
+        togglePasswordButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const passwordInput = button.previousElementSibling;
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
 
-    showPasswordRadio.addEventListener('change',()=>{
-        if(showPasswordRadio.checked){
-            passwordInput.type = "text"
-        }
-        else{
-            passwordInput.type = "password"
-
-        }
-    })
+                // Update button icon
+                button.innerHTML = 
+                    type === 'password' 
+                    ? '<i class="bi bi-eye"></i>' 
+                    : '<i class="bi bi-eye-slash"></i>';
+            });
+        });
+    });
 </script>
 <?php require_once 'includes/footer.php' ?>

@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   /* font-style: italic; */
 }
 :root {
@@ -862,4 +862,23 @@ contact button styles
 scale: 1.1;
 background-color: #f15d23af;
 
+}
+input[type="submit"]{
+  background-color: var(--safo-orange) !important;
+}
+.input-group .btn {
+  border-left: none; /* Remove border overlap */
+  border-radius: 10px 10px;
+}
+.input-group .form-control:focus {
+  z-index: 2; /* Keep input field focus highlight above button */
+}
+#password{
+  border: 1px solid rgba(0 0 0 / 0.3);
+}
+#system_password{
+  border: 1px solid rgba(0 0 0 / 0.3);
+}
+#username{
+  border: 1px solid rgba(0 0 0 / 0.3);
 }

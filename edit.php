@@ -5,6 +5,8 @@ require_once 'includes/session.php';
 require_once 'includes/header.php';
 require_once 'includes/auth_check.php';
 require_once 'includes/db_conn.php';
+require_once 'includes/errorToast.php';
+
 $id = $firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $roomNumber = '';
 $roomResults = $crud->getRoomDetails();
 if(isset($_POST['submit'])){
@@ -64,10 +66,10 @@ if(isset($_POST['submit'])){
     }
 
     $result = $crud->editStudentDetails($id,$firstName,$lastName,$studentId,$category,$level,$programme,$contact,$email,$parentName,$parentContact,$disability,$scholarshipSpecify,$oldRoomNumber,$newRoomNumber);
-    if($result){
+    if($result['success']){
         echo "<script>window.location.href='viewRegisteredStudents'</script>";
     }else{
-        include 'includes/errMessage.php';
+        displayErrorToast($result['message']);
     }
 }
 

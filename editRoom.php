@@ -5,6 +5,8 @@ require_once 'includes/session.php';
 require_once 'includes/header.php';
 require_once 'includes/auth_check.php';
 require_once 'includes/db_conn.php';
+require_once 'includes/errorToast.php';
+
 $roomNumber = $currentStudents = $maxStudents = '';
 if(isset($_POST['submit'])){
     $error = false;
@@ -21,15 +23,15 @@ if(isset($_POST['submit'])){
     // Server-side validation
     if ($currentStudents > $maxStudents) {
         $error = true;
-        echo "<script>alert('Current students cannot exceed maximum students.');</script>";
+        displayErrorToast('Current students cannot exceed maximum students.');
     }
 
     if (!$error) {
         $result = $crud->updateRoomDetails($roomNumber, $currentStudents, $maxStudents);
-        if($result){
+        if($result['success']){
             echo "<script>window.location.href='viewRooms'</script>";
         } else {
-            include 'includes/errMessage.php';
+            displayErrorToast('An error occurred. Please try again.');
         }
     }
 }
