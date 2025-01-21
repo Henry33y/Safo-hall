@@ -112,17 +112,17 @@ if ($result && $result['status'] && $result['data']['status'] == 'success') {
         );
 
         if ($isSuccess['success']) {
-            require_once __DIR__ . '/successMessage.php';
+            // require_once __DIR__ . '/successMessage.php';
             // Send SMS notification
             $message = "Dear $firstName, your payment and registration was successful. Your room number is $roomNumber. Welcome to SAFO HALL.";
             $response = sendSms($contact, $message);
             if ($response) {
-                var_dump("SMS notification sent: $response");
+                // var_dump("SMS notification sent: $response");
                 error_log("SMS notification sent: $response");
             } else {
                 error_log("Failed to send SMS notification.");
             }
-            // echo "<script>window.location.href='../success.php'</script>";
+            echo "<script>window.location.href='../success.php'</script>";
         } else {
             require_once __DIR__. '/errMessage.php';
         }
