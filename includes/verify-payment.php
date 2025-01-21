@@ -112,7 +112,7 @@ if ($result && $result['status'] && $result['data']['status'] == 'success') {
         );
 
         if ($isSuccess['success']) {
-            include 'includes/successMessage.php';
+            require_once __DIR__ . '/successMessage.php';
             // Send SMS notification
             $message = "Dear $firstName, your payment and registration was successful. Your room number is $roomNumber. Welcome to SAFO HALL.";
             $response = sendSms($contact, $message);
@@ -124,14 +124,14 @@ if ($result && $result['status'] && $result['data']['status'] == 'success') {
             }
             // echo "<script>window.location.href='../success.php'</script>";
         } else {
-            include 'includes/errMessage.php';
+            require_once __DIR__. '/errMessage.php';
         }
     } else {
         echo "No form data found.";
     }
 } else {
     // Payment failed
-    include 'includes/errMessage.php';
+    require_once __DIR__ . '/errMessage.php';
     echo "Payment verification failed: " . $result['message'];
     exit;
 }
