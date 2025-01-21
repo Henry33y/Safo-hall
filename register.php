@@ -58,9 +58,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $roomNumber = $_POST['room_number'];
   }
 
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  }
+
   // Store form data in the session or a temporary table to retrieve after payment
   $_SESSION['form_data'] = $_POST;
-  var_dump($_POST);
+  // var_dump($_POST);
 
   // Redirect to the Paystack payment link
   $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
