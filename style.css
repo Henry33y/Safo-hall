@@ -514,6 +514,9 @@ div.dt-button-collection h3.not-top-heading {
   color: white !important;
   background-color: blue !important;
 }
+.construction_image{
+  width: 500px;
+}
 
 @media (max-width: 991px) {
   .desktop-nav-link.register_nav_link::after {
@@ -556,6 +559,9 @@ div.dt-button-collection h3.not-top-heading {
   }
   .actions.clearfix{
     bottom: 0;
+  }
+  .construction_image{
+    width: 100%;
   }
 }
 @media (max-width: 500px) {

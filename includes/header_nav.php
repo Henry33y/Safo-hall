@@ -9,7 +9,7 @@
         <ul class="nav d-none d-sm-flex">
             <li class="nav-item"><a href="/" class="nav-link desktop-nav-link">Home</a></li>
             <li class="nav-item"><a href="about" class="nav-link desktop-nav-link">About Us</a></li>
-            <li class="nav-item"><a href="#" class="nav-link desktop-nav-link">Activities/Events</a></li>
+            <li class="nav-item"><a href="activities" class="nav-link desktop-nav-link">Activities/Events</a></li>
             <li class="nav-item"><a href="register" class="nav-link desktop-nav-link rounded-pill">Register</a></li>
         </ul>
         <div class="btn d-flex flex-column gap-1 hamburger-btn d-sm-none border-0">
