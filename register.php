@@ -52,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $scholarshipSpecify = $_POST['scholarship'];
   } else if ($_POST['is_under_scholarship'] == 'No') {
     $scholarshipSpecify = 'None';
-    echo $scholarshipSpecify;
   } else {
     $scholarshipSpecify = $_POST['specified_scholarship'];
   }
