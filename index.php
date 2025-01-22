@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,20 +17,22 @@
     <script defer src="js/script.js"></script>
     <script defer src="js/email.js"></script>
     <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
     <script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "CGvBcyOQXvXlryGsk",
-      });
-   })();
-</script></div>
+        (function() {
+            emailjs.init({
+                publicKey: "CGvBcyOQXvXlryGsk",
+            });
+        })();
+    </script>
+    </div>
     <title>Home | Safo Hall Pentvars</title>
 </head>
+
 <body class="min-vh-100 position-relative">
     <?php require_once("includes/header_nav.php") ?>
-    
+
     <div>
         <main>
             <section class="hero-container">
@@ -58,7 +61,7 @@
                         <h4>OUR CORE VALUES</h4>
                         <p>Inclusivity, Community, Safety, Growth, Respect, Empowerment, Sustainability, and Excellence.
 
-These values reflect your commitment to fostering a welcoming, secure, and enriching environment where residents can thrive personally and academically, while building meaningful connections and contributing to a sustainable and respectful community.</p>
+                            These values reflect your commitment to fostering a welcoming, secure, and enriching environment where residents can thrive personally and academically, while building meaningful connections and contributing to a sustainable and respectful community.</p>
                     </div>
                     <div class="col-12 col-md-4 px-0 px-md-4">
                         <h4>OUR MISSION</h4>
@@ -68,13 +71,13 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
             </section>
             <div class="swiper mySwiper_desktop d-none d-md-block">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="assets/images/UNFAMALIAR.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/FYNN.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/BROTHER'S KEEPER.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/DUES.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/safoimg1.jpeg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/emblem.jpeg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/FISHY.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/UNFAMALIAR.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/FYNN.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/BROTHER'S KEEPER.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/DUES.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/safoimg1.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/emblem.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/FISHY.jpg" alt=""></div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
@@ -82,20 +85,20 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
             </div>
             <div class="swiper mySwiper d-md-none">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="assets/images/Safo1.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/Safo2.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/Safo3.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/safoimg.jpeg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/safoimg1.jpeg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/BROTHER'S KEEPER.jpg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/emblem.jpeg" alt=""></div>
-                  <div class="swiper-slide"><img src="assets/images/DUES.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/Safo1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/Safo2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/Safo3.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/safoimg.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/safoimg1.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/BROTHER'S KEEPER.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/emblem.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="assets/images/DUES.jpg" alt=""></div>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-            <section class="w-100 my-5 py-5">
+            <!-- <section class="w-100 my-5 py-5">
                 <h2 class="text-center executives_header">SAFO HALL EXECUTIVES FOR 2024/2025 ACADEMIC YEAR</h2>
                 <div class="container-fluid px-0" >
                     <div class="row" id="profileContainer">
@@ -118,7 +121,6 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                             </button>
                                         </div>  
                                   </p>
-                                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                             </div>
                         </div>
@@ -141,7 +143,6 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                             </button>
                                         </div>  
                                   </p>
-                                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                             </div>
                         </div>
@@ -164,7 +165,6 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                             </button>
                                         </div>   
                                     </p>
-                                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                                 </div>
                             </div>
                         </div>
@@ -187,7 +187,6 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                             </button>
                                         </div>  
                                   </p>
-                                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                             </div>
                         </div>
@@ -212,7 +211,6 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                             </button>
                                         </div>  
                                   </p>
-                                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                             </div>
                         </div>
@@ -236,8 +234,123 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                             </button>
                                         </div>  
                                   </p>
-                                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <section class="w-100 my-5 py-5">
+                <h2 class="text-center executives_header">SAFO HALL EXECUTIVES FOR 2024/2025 ACADEMIC YEAR</h2>
+                <div class="container-fluid px-0">
+                    <div class="row" id="profileContainer">
+                        <div class="col-md-2 col-6 px-1">
+                            <div class="card myCard">
+                                <img src="assets/images/RevArthur.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hall Tutor</h5>
+                                    <p class="card-text">
+                                    <h6 class="executive_card_title">
+                                        Rev. Augustine Arthur Norman
+                                    </h6>
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
+                                            <a class="whatsapp_link" href="https://wa.link/uzdldt" target="_blank">Contact</a>
+                                        </button>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6 px-1">
+                            <div class="card myCard">
+                                <img src="assets/images/president.jpg" class="card-img-top" alt="...">
+                                <div class="card-body executive_card_body">
+                                    <h5 class="card-title">President</h5>
+                                    <p class="card-text">
+                                    <h6 class="executive_card_title">
+                                        Bright Ackon
+                                    </h6>
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
+                                            <a class="whatsapp_link" href="https://wa.link/wyshav" target="_blank">Contact</a>
+                                        </button>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6 px-1">
+                            <div class="card myCard">
+                                <img src="assets/images/vice president.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Vice President</h5>
+                                    <p class="card-text text-center">
+                                    <h6 class="classexecutive_card_title">
+                                        Isaac Asante Darko
+                                    </h6>
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
+                                            <a class="whatsapp_link" href="https://wa.link/0abtvn" target="_blank">Contact</a>
+                                        </button>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6 px-1">
+                            <div class="card myCard">
+                                <img src="assets/images/Secretary.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Secretary</h5>
+                                    <p class="card-text">
+                                    <h6 class="executive_card_title">
+                                        Dennis Antwi
+                                    </h6>
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
+                                            <a class="whatsapp_link" href="https://wa.link/ajqd7b" target="_blank">Contact</a>
+                                        </button>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-6 px-1">
+                            <div class="card myCard">
+                                <img src="assets/images/joshua.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Financial Controller</h5>
+                                    <p class="card-text">
+                                    <h6 class="executive_card_title">
+                                        Joshua Obeng
+                                    </h6>
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
+                                            <a class="whatsapp_link" href="https://wa.link/m75gef" target="_blank">Contact</a>
+                                        </button>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-6 px-1">
+                            <div class="card myCard">
+                                <img src="assets/images/rex.jpg" class="card-img-top" alt="...">
+                                <div class="card-body pb-5">
+                                    <h5 class="card-title">Organizer</h5>
+                                    <p class="card-text">
+                                    <h6 class="executive_card_title">
+                                        Rexford Agyei
+                                    </h6>
+                                    <div class="contact_executive_container">
+                                        <button class="contact_executive">
+                                            <a class="whatsapp_link" href="https://wa.link/h3ladd" target="_blank">Contact</a>
+                                        </button>
+                                    </div>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -275,35 +388,35 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
         </main>
         <?php require_once("includes/safo_footer.php") ?>
     </div>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const contactButtons = document.querySelectorAll('.contact_executive');
-        const contactName = document.getElementById('contactName');
-        const whatsappLink = document.getElementById('whatsappLink');
-        const emailLink = document.getElementById('emailLink');
-        const phoneLink = document.getElementById('phoneLink');
-        const contactModal = new bootstrap.Modal(document.getElementById('contactModal'));
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactButtons = document.querySelectorAll('.contact_executive');
+            const contactName = document.getElementById('contactName');
+            const whatsappLink = document.getElementById('whatsappLink');
+            const emailLink = document.getElementById('emailLink');
+            const phoneLink = document.getElementById('phoneLink');
+            const contactModal = new bootstrap.Modal(document.getElementById('contactModal'));
 
-        contactButtons.forEach(button => {
-            button.addEventListener('click', () => {
-            // Get data attributes
-            const name = button.getAttribute('data-name');
-            const whatsapp = button.getAttribute('data-whatsapp');
-            const email = button.getAttribute('data-email');
-            const phone = button.getAttribute('data-phone');
+            contactButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Get data attributes
+                    const name = button.getAttribute('data-name');
+                    const whatsapp = button.getAttribute('data-whatsapp');
+                    const email = button.getAttribute('data-email');
+                    const phone = button.getAttribute('data-phone');
 
-            // Update modal content
-            contactName.textContent = name;
-            whatsappLink.href = whatsapp;
-            emailLink.href = `mailto:${email}`;
-            phoneLink.href = `tel:${phone}`;
+                    // Update modal content
+                    contactName.textContent = name;
+                    whatsappLink.href = whatsapp;
+                    emailLink.href = `mailto:${email}`;
+                    phoneLink.href = `tel:${phone}`;
 
-            // Show modal
-            contactModal.show();
+                    // Show modal
+                    contactModal.show();
+                });
+            });
         });
-        });
-    });
-</script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
@@ -341,6 +454,7 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                 disableOnInteraction: false,
             },
         });
-</script>
+    </script>
 </body>
+
 </html>

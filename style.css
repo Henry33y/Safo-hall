@@ -844,21 +844,23 @@ contact button styles
   margin-bottom: 50px;
 }
 
-/* .whatsapp_link{
+.whatsapp_link{
   background-color: var(--safo-orange);
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   text-decoration: none;
   color: white;
-} */
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+}
 
 .contact_executive{
   color: white;
   width: 100%;
   cursor: pointer;
-  padding: 10px 20px;
-  background-color: #f15f23;
+  padding: 0px;
+  /* background-color: #f15f23; */
   border: none;
   border-radius: 10px;
   transition: all 0.3s ease-in;
@@ -866,9 +868,11 @@ contact button styles
 
 
 .contact_executive:hover{
-scale: 1.1;
+scale: 1.05;
 background-color: #f15d23af;
-
+}
+.contact_executive:hover .whatsapp_link{
+background-color: #f15d23af;
 }
 input[type="submit"]{
   background-color: var(--safo-orange) !important;
