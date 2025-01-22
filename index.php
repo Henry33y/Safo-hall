@@ -109,8 +109,12 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         Rev. Augustine Arthur Norman
                                     </h6>
                                     <div class="contact_executive_container">
-                                            <button class="contact_executive">
-                                                <a class="whatsapp_link" href="https://wa.link/uzdldt" target="_blank">Contact</a> 
+                                            <button class="contact_executive" 
+                                            data-name="Rev. Augustine Arthur Norman" 
+                                            data-whatsapp="https://wa.link/uzdldt" 
+                                            data-email="rev.norman@example.com" 
+                                            data-phone="+233555555555">
+                                                Contact
                                             </button>
                                         </div>  
                                   </p>
@@ -128,8 +132,12 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         Bright Ackon
                                     </h6>
                                     <div class="contact_executive_container">
-                                            <button class="contact_executive">
-                                                <a class="whatsapp_link" href="https://wa.link/wyshav" target="_blank">Contact</a> 
+                                            <button class="contact_executive"
+                                            data-name="Bright Ackon" 
+                                            data-whatsapp="https://wa.link/wyshav" 
+                                            data-email="bright@example.com" 
+                                            data-phone="+233555555555">     
+                                                Contact
                                             </button>
                                         </div>  
                                   </p>
@@ -147,8 +155,12 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                             Isaac Asante Darko
                                         </h6> 
                                         <div class="contact_executive_container">
-                                            <button class="contact_executive">
-                                                <a class="whatsapp_link" href="https://wa.link/0abtvn" target="_blank">Contact</a> 
+                                        <button class="contact_executive"
+                                            data-name="Isaac Asante Darko" 
+                                            data-whatsapp="https://wa.link/0abtvn" 
+                                            data-email="ike@example.com" 
+                                            data-phone="+233555555555">     
+                                                Contact
                                             </button>
                                         </div>   
                                     </p>
@@ -166,8 +178,12 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         Dennis Antwi
                                     </h6> 
                                     <div class="contact_executive_container">
-                                            <button class="contact_executive">
-                                                <a class="whatsapp_link" href="https://wa.link/ajqd7b" target="_blank">Contact</a> 
+                                    <button class="contact_executive"
+                                            data-name="Dennis Antwi" 
+                                            data-whatsapp="https://wa.link/ajqd7b" 
+                                            data-email="dennis@example.com" 
+                                            data-phone="+233555555555">     
+                                                Contact
                                             </button>
                                         </div>  
                                   </p>
@@ -187,8 +203,12 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         Joshua Obeng
                                     </h6> 
                                     <div class="contact_executive_container">
-                                            <button class="contact_executive">
-                                                <a class="whatsapp_link" href="https://wa.link/m75gef" target="_blank">Contact</a> 
+                                    <button class="contact_executive"
+                                            data-name="Joshua Obeng" 
+                                            data-whatsapp="https://wa.link/m75gef" 
+                                            data-email="joshua@example.com" 
+                                            data-phone="+233555555555">     
+                                                Contact
                                             </button>
                                         </div>  
                                   </p>
@@ -207,8 +227,12 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                                         Rexford Agyei
                                     </h6> 
                                     <div class="contact_executive_container">
-                                            <button class="contact_executive">
-                                                <a class="whatsapp_link" href="https://wa.link/h3ladd" target="_blank">Contact</a> 
+                                    <button class="contact_executive"
+                                            data-name="Rexford Agyei" 
+                                            data-whatsapp="https://wa.link/h3ladd" 
+                                            data-email="rex@example.com" 
+                                            data-phone="+233555555555">     
+                                                Contact
                                             </button>
                                         </div>  
                                   </p>
@@ -219,6 +243,24 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
                     </div>
                 </div>
             </section>
+            <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="contactModalLabel">Contact Options</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="contactName" class="fw-bold"></p>
+                            <ul>
+                                <li><a id="whatsappLink" href="#" target="_blank">WhatsApp</a></li>
+                                <li><a id="emailLink" href="#" target="_blank">Email</a></li>
+                                <li><a id="phoneLink" href="#" target="_blank">Phone</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <section>
                 <div class="px-sm-5">
                     <img class="img-fluid" src="assets/images/executives.jpg" alt="">
@@ -233,7 +275,35 @@ These values reflect your commitment to fostering a welcoming, secure, and enric
         </main>
         <?php require_once("includes/safo_footer.php") ?>
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const contactButtons = document.querySelectorAll('.contact_executive');
+        const contactName = document.getElementById('contactName');
+        const whatsappLink = document.getElementById('whatsappLink');
+        const emailLink = document.getElementById('emailLink');
+        const phoneLink = document.getElementById('phoneLink');
+        const contactModal = new bootstrap.Modal(document.getElementById('contactModal'));
 
+        contactButtons.forEach(button => {
+            button.addEventListener('click', () => {
+            // Get data attributes
+            const name = button.getAttribute('data-name');
+            const whatsapp = button.getAttribute('data-whatsapp');
+            const email = button.getAttribute('data-email');
+            const phone = button.getAttribute('data-phone');
+
+            // Update modal content
+            contactName.textContent = name;
+            whatsappLink.href = whatsapp;
+            emailLink.href = `mailto:${email}`;
+            phoneLink.href = `tel:${phone}`;
+
+            // Show modal
+            contactModal.show();
+        });
+        });
+    });
+</script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>

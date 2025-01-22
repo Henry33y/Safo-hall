@@ -8,9 +8,11 @@ require_once 'includes/session.php';
 // session_destroy();
 require_once 'includes/header.php';
 require_once 'includes/db_conn.php';
+require_once 'includes/sms_config.php';
+require_once 'includes/errorToast.php';
 $firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $roomNumber = '';
 $roomResults = $crud->getRoomDetails();
-if ($_SERVER['REQUEST_METHOD']=='POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (!empty($_POST['first_name'])) {
     $firstName = $_POST['first_name'];
   }
@@ -58,25 +60,57 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $roomNumber = $_POST['room_number'];
   }
 
-  if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+  // if (session_status() === PHP_SESSION_NONE) {
+  //   session_start();
+  // }
+
+  // // Store form data in the session or a temporary table to retrieve after payment
+  // $_SESSION['form_data'] = $_POST;
+  // // var_dump($_POST);
+
+  // // Redirect to the Paystack payment link
+  // $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
+  // echo "<script>window.location.href='$paymentLink'</script>";
+  // exit;
+
+  // Save to the database
+  $isSuccess = $crud->insertStudentInfo(
+    $firstName,
+    $lastName,
+    $studentId,
+    $category,
+    $level,
+    $programme,
+    $contact,
+    $email,
+    $parentName,
+    $parentContact,
+    $disability,
+    $scholarshipSpecify,
+    $roomNumber
+  );
+
+  if ($isSuccess['success']) {
+    // require_once __DIR__ . '/successMessage.php';
+    // Send SMS notification
+    $message = "Dear $firstName, your registration was successful. Your room number is $roomNumber. Welcome to SAFO HALL.";
+    $response = sendSms($contact, $message);
+    if ($response) {
+      // var_dump("SMS notification sent: $response");
+      error_log("SMS notification sent: $response");
+    } else {
+      error_log("Failed to send SMS notification.");
+    }
+    echo "<script>window.location.href='success.php'</script>";
+  } else {
+    displayErrorToast($isSuccess['error']);
   }
-
-  // Store form data in the session or a temporary table to retrieve after payment
-  $_SESSION['form_data'] = $_POST;
-  // var_dump($_POST);
-
-  // Redirect to the Paystack payment link
-  $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
-  echo "<script>window.location.href='$paymentLink'</script>";
-  exit;
-
 }
 ?>
-  <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/style1.css">
-  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="style.css" />
 
 <body>
   <div class="wrapper">
@@ -103,17 +137,17 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             <p>Please fill with your details</p>
             <div class="form-row">
               <div class="form-holder">
-                <input type="text" spellcheck="false" name="first_name" id="first_name" placeholder="First Name" class="form-control" required/>
+                <input type="text" spellcheck="false" name="first_name" id="first_name" placeholder="First Name" class="form-control" required />
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
               <div class="form-holder">
-                <input type="text" spellcheck="false" name="last_name" id="last_name" placeholder="Last Name" class="form-control" required/>
+                <input type="text" spellcheck="false" name="last_name" id="last_name" placeholder="Last Name" class="form-control" required />
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
             </div>
             <div class="form-row">
               <div class="form-holder">
-                <input type="text" spellcheck="false" name="student_id" id="student_id" placeholder="Student ID" class="form-control" required/>
+                <input type="text" spellcheck="false" name="student_id" id="student_id" placeholder="Student ID" class="form-control" required />
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
               <div class="form-holder">
@@ -198,23 +232,23 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             <p>Please fill with Contact Info</p>
             <div class="form-row">
               <div class="form-holder w-100">
-                <input type="number" name="contact" id="contact" placeholder="Contact" class="form-control" required/>
+                <input type="number" name="contact" id="contact" placeholder="Contact" class="form-control" required />
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
             </div>
             <div class="form-row">
               <div class="form-holder">
-                <input type="email" name="email" id="email" placeholder="Email" class="form-control" required/>
+                <input type="email" name="email" id="email" placeholder="Email" class="form-control" required />
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
               <div class="form-holder">
-                <input type="text" name="parent_name" id="parent_name" placeholder="Parent's Name" class="form-control" required/>
+                <input type="text" name="parent_name" id="parent_name" placeholder="Parent's Name" class="form-control" required />
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
             </div>
             <div class="form-row">
               <div class="form-holder">
-                <input type="text" name="parent_contact" id="parent_contact" placeholder="Parent's Contact" class="form-control" required/>
+                <input type="text" name="parent_contact" id="parent_contact" placeholder="Parent's Contact" class="form-control" required />
                 <div class="invalid-feedback">This field cannot be empty</div>
               </div>
             </div>
@@ -325,7 +359,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 <div class="invalid-feedback">Please select a room</div>
               </div>
             </div>
-            
+
           </div>
         </div>
         <div class="checkbox-circle mt-24">
@@ -347,64 +381,64 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   <script src="js/main.js"></script>
 
 
-  <script>      
-        $(document).ready(function(){
-          var navbarHeight = $('.navbar').outerHeight();
-          $('body').css('margin-top', navbarHeight + 'px');
+  <script>
+    $(document).ready(function() {
+      var navbarHeight = $('.navbar').outerHeight();
+      $('body').css('margin-top', navbarHeight + 'px');
 
-          $("#challenged").click(function(){
-            $("#specify_disability_container").show();
-          });
+      $("#challenged").click(function() {
+        $("#specify_disability_container").show();
+      });
 
-          $("#not_challenged").click(function(){
-            $("#specify_disability_container").hide();
-          });
+      $("#not_challenged").click(function() {
+        $("#specify_disability_container").hide();
+      });
 
-          $("#under_scholarship").click(function(){
-            $("#choose_scholarship_container").show();
-          });
-          $("#not_under_scholarship").click(function(){
-            $("#choose_scholarship_container").hide();
-          });
-          $("#scholarship_select").change(function(){
-            $("#scholarship_select").val() == "others" ? $("#specify_scholarship_container").show() : $("#specify_scholarship_container").hide()
-          })
-          
-          $('a[href="#finish"]').on('click', function(e) {
-            e.preventDefault()
-            $('#wizard').submit();
-          });
-          $('a[href="#finish"]').attr('name','submit')
+      $("#under_scholarship").click(function() {
+        $("#choose_scholarship_container").show();
+      });
+      $("#not_under_scholarship").click(function() {
+        $("#choose_scholarship_container").hide();
+      });
+      $("#scholarship_select").change(function() {
+        $("#scholarship_select").val() == "others" ? $("#specify_scholarship_container").show() : $("#specify_scholarship_container").hide()
+      })
 
-          let selectedRoomNumber
-            $('.room-button').click(function() {
-            selectedRoomNumber = $(this).val();
-          });
+      $('a[href="#finish"]').on('click', function(e) {
+        e.preventDefault()
+        $('#wizard').submit();
+      });
+      $('a[href="#finish"]').attr('name', 'submit')
 
-        $('.modal-submit-btn').click(function() {
-          $('#room_number').val(selectedRoomNumber);
-          $('#room_num_display').text(selectedRoomNumber);
-          console.log($('#room_number').val());
+      let selectedRoomNumber
+      $('.room-button').click(function() {
+        selectedRoomNumber = $(this).val();
+      });
+
+      $('.modal-submit-btn').click(function() {
+        $('#room_number').val(selectedRoomNumber);
+        $('#room_num_display').text(selectedRoomNumber);
+        console.log($('#room_number').val());
       });
 
 
 
-              $('#wizard').submit(function(e) {
+      $('#wizard').submit(function(e) {
         if (!$(this)[0].checkValidity()) {
-            e.preventDefault();
-            e.stopPropagation();
+          e.preventDefault();
+          e.stopPropagation();
         }
-        
-        $('#wizard').addClass('was-validated');
-    });
-    $('#student_id').on('keyup', function() {
-                let currentValue = $(this).val();
-                let upperCaseValue = currentValue.toUpperCase();
-                $(this).val(upperCaseValue);
-                console.log('Hello');
-            });    
-        });
-    </script>
-<?php require_once 'includes/footer.php' ?>
 
-</html>
+        $('#wizard').addClass('was-validated');
+      });
+      $('#student_id').on('keyup', function() {
+        let currentValue = $(this).val();
+        let upperCaseValue = currentValue.toUpperCase();
+        $(this).val(upperCaseValue);
+        console.log('Hello');
+      });
+    });
+  </script>
+  <?php require_once 'includes/footer.php' ?>
+
+  </html>

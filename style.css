@@ -844,19 +844,20 @@ contact button styles
   margin-bottom: 50px;
 }
 
-.whatsapp_link{
-  /* background-color: var(--safo-orange); */
+/* .whatsapp_link{
+  background-color: var(--safo-orange);
   display: block;
   width: 100%;
   padding: 10px;
   text-decoration: none;
   color: white;
-}
+} */
 
 .contact_executive{
+  color: white;
   width: 100%;
   cursor: pointer;
-  padding: 0 20px;
+  padding: 10px 20px;
   background-color: #f15f23;
   border: none;
   border-radius: 10px;
