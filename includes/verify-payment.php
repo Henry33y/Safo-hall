@@ -108,6 +108,7 @@ if ($result && $result['status'] && $result['data']['status'] == 'success') {
             $parentContact,
             $disability,
             $scholarshipSpecify,
+            $area,
             $roomNumber
         );
 

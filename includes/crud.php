@@ -63,7 +63,7 @@
             }
         }
 
-        public function editStudentDetails($id, $firstName, $lastName, $studentId, $category, $level, $programme, $contact, $email, $parentName, $parentContact, $disability, $scholarshipSpecify, $oldRoomNumber, $newRoomNumber) {
+        public function editStudentDetails($id, $firstName, $lastName, $studentId, $category, $level, $programme, $contact, $email, $parentName, $parentContact, $disability, $scholarshipSpecify, $area, $oldRoomNumber, $newRoomNumber) {
             try {
                 $oldRoomDetails = $this->getRoomDetailsByRoomNumber($oldRoomNumber);
                 $newRoomDetails = $this->getRoomDetailsByRoomNumber($newRoomNumber);
@@ -83,7 +83,7 @@
                     }
                 }
 
-                $sql = "UPDATE `student_registration_info` SET `first_name`=:firstName,`last_name`=:lastName,`student_id`=:studentId,`category`=:category,`programme`=:programme,`level`=:level1,`email`=:email,`contact`=:contact,`parent_name`=:parentName,`parent_contact`=:parentContact,`physical_challenges`=:disability,`scholarship`=:scholarshipSpecify,`room_number`=:roomNumber WHERE id= :id";
+                $sql = "UPDATE `student_registration_info` SET `first_name`=:firstName,`last_name`=:lastName,`student_id`=:studentId,`category`=:category,`programme`=:programme,`level`=:level1,`email`=:email,`contact`=:contact,`parent_name`=:parentName,`parent_contact`=:parentContact,`physical_challenges`=:disability,`scholarship`=:scholarshipSpecify,`area`=:area,`room_number`=:roomNumber WHERE id= :id";
 
                 $stmt = $this->db->prepare($sql);
 
@@ -100,6 +100,7 @@
                 $stmt->bindparam(':parentContact', $parentContact);
                 $stmt->bindparam(':disability', $disability);
                 $stmt->bindparam(':scholarshipSpecify', $scholarshipSpecify);
+                $stmt->bindparam(':area', $area);
                 $stmt->bindparam(':roomNumber', $newRoomNumber);
 
                 $stmt->execute();

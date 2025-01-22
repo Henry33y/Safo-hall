@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   } else {
     $scholarshipSpecify = $_POST['specified_scholarship'];
   }
-  echo $area;
+  // echo $area;
   if (!empty($_POST['room_number'])) {
     $roomNumber = $_POST['room_number'];
   }
