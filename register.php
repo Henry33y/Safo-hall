@@ -209,6 +209,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     and Engineering Management</option>
                   <option value="B.Sc. Information Technology">B.Sc. Information Technology</option>
                   <option value="B.Sc. Nursing">B.Sc. Nursing</option>
+                  <option value="B.Eng Robotics and Automation">B.Eng Robotics and Automation</option>
+                  <option value="B.Eng Electricals and Electronics Engineering">B.Eng Electricals and Electronics Engineering</option>
+                  <option value="B.Sc Health Information">B.Sc Health Information</option>
                 </select>
                 <div class="invalid-feedback">Please choose an option</div>
               </div>
