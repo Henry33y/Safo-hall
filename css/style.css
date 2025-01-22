@@ -62,7 +62,7 @@ img {
 }
 .wizard {
   width: 920px;
-  height: 560px;
+  height: 600px;
   position: relative;
 }
 .wizard > .steps {
@@ -268,7 +268,7 @@ textarea.form-control {
 }
 .actions {
   position: absolute;
-  bottom: 55px;
+  bottom: 10px;
   right: 51px;
 }
 .actions ul {

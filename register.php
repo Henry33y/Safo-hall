@@ -10,7 +10,7 @@ require_once 'includes/header.php';
 require_once 'includes/db_conn.php';
 require_once 'includes/sms_config.php';
 require_once 'includes/errorToast.php';
-$firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $roomNumber = '';
+$firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $area = $roomNumber = '';
 $roomResults = $crud->getRoomDetails();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (!empty($_POST['first_name'])) {
@@ -50,11 +50,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
   if ($_POST['is_under_scholarship'] == 'Yes' && $_POST['scholarship'] != 'others') {
     $scholarshipSpecify = $_POST['scholarship'];
+    if($_POST['scholarship'] == 'Church Of Pentecost'){
+      $area = $_POST['specified_area'];
+    }else{
+      $area = 'None';
+    }
   } else if ($_POST['is_under_scholarship'] == 'No') {
     $scholarshipSpecify = 'None';
+    $area = 'None';
   } else {
     $scholarshipSpecify = $_POST['specified_scholarship'];
   }
+  echo $area;
   if (!empty($_POST['room_number'])) {
     $roomNumber = $_POST['room_number'];
   }
@@ -86,6 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $parentContact,
     $disability,
     $scholarshipSpecify,
+    $area,
     $roomNumber
   );
 
@@ -306,6 +314,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <select name="scholarship" id="scholarship_select" class="form-select form-control" required>
                       <option value="choose_scholarship" selected disabled>Choose Scholarship</option>
                       <option value="Church Of Pentecost">Church of Pentecost</option>
+                      <option value="COPCEF">COPCEF</option>
                       <option value="Pentecost University">Pentecost University</option>
                       <option value="Get Fund">GET Fund</option>
                       <option value="others">Others(Please Specify)</option>
@@ -316,6 +325,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       <div>
                         <input type="text" name="specified_scholarship" id="specified_scholarship" class="form-control">
                       </div>
+                    </div>
+                  </div>
+                  <div id="specify_area_container" style="display: none;">
+                    <label for="specified_area">Specify Area</label>
+                    <div>
+                      <input type="text" name="specified_area" id="specified_area" class="form-control">
                     </div>
                   </div>
                 </div>
@@ -403,8 +418,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $("#choose_scholarship_container").hide();
       });
       $("#scholarship_select").change(function() {
-        $("#scholarship_select").val() == "others" ? $("#specify_scholarship_container").show() : $("#specify_scholarship_container").hide()
-      })
+        const selectedValue = $(this).val();
+        if (selectedValue === "others") {
+          $("#specify_scholarship_container").show();
+          $("#specify_area_container").hide();
+        } else if (selectedValue === "Church Of Pentecost") {
+          $("#specify_area_container").show();
+          $("#specify_scholarship_container").hide();
+        } else {
+          $("#specify_scholarship_container").hide();
+          $("#specify_area_container").hide();
+        }
+      });
 
       $('a[href="#finish"]').on('click', function(e) {
         e.preventDefault()

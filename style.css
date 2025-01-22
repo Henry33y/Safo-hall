@@ -517,6 +517,12 @@ div.dt-button-collection h3.not-top-heading {
 .construction_image{
   width: 500px;
 }
+.inner{
+  height: 600px !important;
+}
+.image-holder{
+  height: 100%;
+}
 
 @media (max-width: 991px) {
   .desktop-nav-link.register_nav_link::after {

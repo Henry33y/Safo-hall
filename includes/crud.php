@@ -6,7 +6,7 @@
             $this->db = $conn;
         }
 
-        public function insertStudentInfo($firstName, $lastName, $studentId, $category, $level, $programme, $contact, $email, $parentName, $parentContact, $disability, $scholarshipSpecify, $roomNumber) {
+        public function insertStudentInfo($firstName, $lastName, $studentId, $category, $level, $programme, $contact, $email, $parentName, $parentContact, $disability, $scholarshipSpecify, $area, $roomNumber) {
             try {
                 $result = $this->getStudentByStudentId($studentId);
                 if ($result['num'] > 0) {
@@ -24,7 +24,7 @@
                         // Update current students count in the database
                         $this->updateRoomCurrentStudents($roomNumber, $roomDetails['current_students']);
 
-                        $sql = "INSERT INTO `student_registration_info`(`first_name`, `last_name`, `student_id`, `category`, `programme`, `level`, `email`, `contact`, `parent_name`, `parent_contact`, `physical_challenges`, `scholarship`, `room_number`) VALUES (:firstName,:lastName,:studentId,:category,:programme,:level1,:email,:contact,:parentName,:parentContact,:disability,:scholarshipSpecify,:roomNumber)";
+                        $sql = "INSERT INTO `student_registration_info`(`first_name`, `last_name`, `student_id`, `category`, `programme`, `level`, `email`, `contact`, `parent_name`, `parent_contact`, `physical_challenges`, `scholarship`, `area`, `room_number`) VALUES (:firstName,:lastName,:studentId,:category,:programme,:level1,:email,:contact,:parentName,:parentContact,:disability,:scholarshipSpecify,:area,:roomNumber)";
 
                         $stmt = $this->db->prepare($sql);
 
@@ -40,6 +40,7 @@
                         $stmt->bindparam(':parentContact', $parentContact);
                         $stmt->bindparam(':disability', $disability);
                         $stmt->bindparam(':scholarshipSpecify', $scholarshipSpecify);
+                        $stmt->bindparam(':area', $area);
                         $stmt->bindparam(':roomNumber', $roomNumber);
 
                         $stmt->execute();
