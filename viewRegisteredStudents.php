@@ -56,7 +56,7 @@
                     <td><?php echo $r['physical_challenges'] ?></td>
                     <td><?php echo $r['scholarship'] ?></td>
                     <td><?php echo $r['registered_at'] ?></td>
-                    <td style="font-size: 1.1em;">
+                    <td class="actions_container d-flex gap-1" style="font-size: 1.1em;">
                         <a title="View" href="view?id=<?php echo $r['id'] ?>" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
                         <a title="Edit" href="edit?id=<?php echo $r['id'] ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                         <a title="Delete" onclick="return confirm('Are you sure you want to delete this record? This action cannot be reversed.')" href="delete.php?id=<?php echo $r['id'] ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
@@ -105,6 +105,16 @@
                 target: 4,
                 visible: false,
                 searchable: false
+            },
+            {
+                target: 6,
+                render: function (data, type, row) {
+                    const maxLength = 40;
+                    if (data.length > maxLength) {
+                        return `<span title="${data}">${data.substring(0, maxLength)}...</span>`;
+                    }
+                    return data;
+                }
             },
             {
                 target: 8,
