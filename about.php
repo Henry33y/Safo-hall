@@ -62,6 +62,16 @@
 
     </div>
 
+    <h1>Safo Hall Anthem</h1>
+            <p id="Anthem">
+             We are Safo Hall in PU <br>
+             We stand above the other halls <br>
+             Nobles Among Equal is our slogan <br>
+             We will stand to protect our image. <br>
+             Men of dignity, integrity and excellence <br>
+             We will rise to protect our image (2x)
+            </p>
+
     <iframe width="100%" height="400" 
            src="https://www.youtube.com/embed/HGN6i4Osa4U?si=k5hisTcrhPq6zoCR"
            title="YouTube video player"
@@ -72,17 +82,19 @@
     </iframe>
 
 
+    <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/Q70hip-10As?si=VKdcBX1-FCEIfubd" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+
+    </iframe>
+
+
     <div class="brief-Details_of_Safo">
         <hr>
-            <h1>Safo Hall Anthem</h1>
-            <p id="Anthem">
-             We are Safo Hall in PU <br>
-             We stand above the other halls <br>
-             Nobles Among Equal is our slogan <br>
-             We will stand to protect our image. <br>
-             Men of dignity, integrity and excellence <br>
-             We will rise to protect our image (2x)
-            </p>
 
             <div>
                 <div>
