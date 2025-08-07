@@ -245,5 +245,17 @@
                 ];
             }
         }
+        public function lockRoomStatus($roomNumber) {
+            $sql = "UPDATE rooms SET status = 'locked' WHERE room_number = :roomNumber";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':roomNumber', $roomNumber);
+            return $stmt->execute();
+        }
+        public function unlockRoomStatus($roomNumber) {
+            $sql = "UPDATE rooms SET status = 'open' WHERE room_number = :roomNumber";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':roomNumber', $roomNumber);
+            return $stmt->execute();
+        }
     }
 ?>

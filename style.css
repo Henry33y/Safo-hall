@@ -226,6 +226,10 @@ header ul {
   border-color: #6d7f52;
   color: #6d7f52;
 }
+.room-button .small {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
 .room-button:focus {
   border-color: #6d7f52;
   background-color: #6d7f52;

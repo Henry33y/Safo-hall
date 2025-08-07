@@ -352,8 +352,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <?php
                     while ($r = $roomResults->fetch(PDO::FETCH_ASSOC)) {
                       $isFull = $r['current_students'] == $r['max_students'];
+                      $isLocked = $r['status'] === 'locked';
+                      $isDisabled = $isFull || $isLocked;
                       $buttonClass = 'btn btn-outline-primary m-2 room-button';
-                      if ($isFull) {
+                      if ($isDisabled) {
                         $buttonClass .= ' disabled bg-secondary text-dark';
                       }
 
