@@ -346,30 +346,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <div class="modal-header d-flex flex-column text-start position-relative">
                     <h3 class="modal-title w-100">Choose Room</h3>
                     <small class="text-small w-100 mt-3">Select a room number and click on the submit button below</small>
-                    <!-- <button type="button" class="btn-close position-absolute modal_close_btn"
-                      data-bs-dismiss="modal"></button> -->
                   </div>
-                  <div class="modal-body">
+
+                  <div class="modal-body myGrid" style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
                     <?php
                     while ($r = $roomResults->fetch(PDO::FETCH_ASSOC)) {
-                      echo '<button type="button" value="' . $r['room_number'] . '" class="btn btn-outline-primary m-2 room-button ';
-                      if ($r['current_students'] == $r['max_students']) {
-                        echo 'disabled bg-secondary';
+                      $isFull = $r['current_students'] == $r['max_students'];
+                      $buttonClass = 'btn btn-outline-primary m-2 room-button';
+                      if ($isFull) {
+                        $buttonClass .= ' disabled bg-secondary text-dark';
                       }
-                      echo '">' . $r['room_number'] . '</button>';
+
+                      echo '<button type="button" value="' . $r['room_number'] . '" class="' . $buttonClass . '" data-room_name="'. $r['room_name'].'">';
+                      echo '<div><strong>' . $r['room_name'] . '</strong></div>';
+                      echo '<div class="small text-muted">' . $r['current_students'] . ' / ' . $r['max_students'] . ' occupied</div>';
+                      echo '</button>';
                     }
                     ?>
                   </div>
+
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary modal-submit-btn"
-                      data-bs-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-primary modal-submit-btn" data-bs-dismiss="modal">Submit</button>
                   </div>
                 </div>
               </div>
             </div>
             <div class="">
-              <label for="room_number" class="form-label">Room Number &nbsp;</label>
+              <label for="room_number" class="form-label">Selected Room: &nbsp;</label>
               <span class="" id="room_num_display"></span>
               <div>
                 <input type="number" name="room_number" id="room_number" class="form-control d-none" required>
@@ -437,14 +441,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       });
       $('a[href="#finish"]').attr('name', 'submit')
 
-      let selectedRoomNumber
-      $('.room-button').click(function() {
+      let selectedRoomNumber;
+      let selectedRoomName;
+
+      $('.room-button').click(function () {
         selectedRoomNumber = $(this).val();
+        selectedRoomName = $(this).data('room_name');
       });
 
-      $('.modal-submit-btn').click(function() {
+      $('.modal-submit-btn').click(function () {
         $('#room_number').val(selectedRoomNumber);
-        $('#room_num_display').text(selectedRoomNumber);
+        $('#room_num_display').text(selectedRoomName);
         console.log($('#room_number').val());
       });
 

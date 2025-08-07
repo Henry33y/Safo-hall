@@ -222,7 +222,7 @@ header ul {
   box-shadow: none;
 }
 .room-button {
-  width: 50px;
+  /* width: 50px; */
   border-color: #6d7f52;
   color: #6d7f52;
 }
@@ -898,4 +898,9 @@ input[type="submit"]{
 }
 #username{
   border: 1px solid rgba(0 0 0 / 0.3);
+}
+
+.myGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
