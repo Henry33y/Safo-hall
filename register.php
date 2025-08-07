@@ -66,36 +66,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $roomNumber = $_POST['room_number'];
   }
 
-  // if (session_status() === PHP_SESSION_NONE) {
-  //   session_start();
-  // }
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  }
 
-  // // Store form data in the session or a temporary table to retrieve after payment
-  // $_SESSION['form_data'] = $_POST;
-  // // var_dump($_POST);
+  // Store form data in the session or a temporary table to retrieve after payment
+  $_SESSION['form_data'] = $_POST;
+  // var_dump($_POST);
 
-  // // Redirect to the Paystack payment link
-  // $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
-  // echo "<script>window.location.href='$paymentLink'</script>";
-  // exit;
+  // Redirect to the Paystack payment link
+  $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
+  echo "<script>window.location.href='$paymentLink'</script>";
+  exit;
 
-  // Save to the database
-  $isSuccess = $crud->insertStudentInfo(
-    $firstName,
-    $lastName,
-    $studentId,
-    $category,
-    $level,
-    $programme,
-    $contact,
-    $email,
-    $parentName,
-    $parentContact,
-    $disability,
-    $scholarshipSpecify,
-    $area,
-    $roomNumber
-  );
 
   if ($isSuccess['success']) {
     // require_once __DIR__ . '/successMessage.php';
@@ -361,7 +344,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                       echo '<button type="button" value="' . $r['room_number'] . '" class="' . $buttonClass . '" data-room_name="'. $r['room_name'].'">';
                       echo '<div><strong>' . $r['room_name'] . '</strong></div>';
-                      echo '<div class="small text-muted">' . $r['current_students'] . ' / ' . $r['max_students'] . ' occupied</div>';
+                      if($isLocked){
+                        echo '<div class="small text-muted"> <i class="bi bi-lock-fill"></i> Locked </div>';
+                      }else{
+                        echo '<div class="small text-muted">' . $r['current_students'] . ' / ' . $r['max_students'] . ' occupied</div>';
+                      }
                       echo '</button>';
                     }
                     ?>
@@ -383,6 +370,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               </div>
             </div>
 
+            <div>
+              <p>*Click on the submit button to proceed to payment of Hall Dues(GHS150.00)</p>
+            </div>
           </div>
         </div>
         <div class="checkbox-circle mt-24">
