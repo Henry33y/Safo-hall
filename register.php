@@ -13,6 +13,7 @@ require_once 'includes/errorToast.php';
 $firstName = $lastName = $studentId = $category = $level = $programme = $contact = $email = $parentName = $parentContact = $physicallyChallenged = $disability = $underScholarship = $scholarshipSpecify = $area = $roomNumber = '';
 $roomResults = $crud->getRoomDetails();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  // --- your existing field collection unchanged ---
   if (!empty($_POST['first_name'])) {
     $firstName = $_POST['first_name'];
   }
@@ -61,25 +62,105 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   } else {
     $scholarshipSpecify = $_POST['specified_scholarship'];
   }
-  // echo $area;
   if (!empty($_POST['room_number'])) {
     $roomNumber = $_POST['room_number'];
   }
 
-  if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+  // generate unique payment reference
+  function generateReference($prefix = 'REG') {
+      return $prefix . '_' . bin2hex(random_bytes(8));
+  }
+  $reference = generateReference();
+
+  // Insert pending registration using $crud (reserves a slot)
+  $insertResp = $crud->insertPendingStudentInfo(
+      $firstName,
+      $lastName,
+      $studentId,
+      $category,
+      $level,
+      $programme,
+      $contact,
+      $email,
+      $parentName,
+      $parentContact,
+      $disability,
+      $scholarshipSpecify,
+      $area,
+      $roomNumber,
+      $reference
+  );
+
+  if (!$insertResp['success']) {
+      // Insert failed (duplicate or room full etc.)
+      displayErrorToast($insertResp['error'] ?? 'Registration failed.');
+      exit;
   }
 
-  // Store form data in the session or a temporary table to retrieve after payment
-  $_SESSION['form_data'] = $_POST;
-  // var_dump($_POST);
-  session_write_close();
+  // Initialize Paystack and redirect
+  require_once 'includes/loadenv.php';
+  try {
+      loadEnv(__DIR__ . '/.env'); // keep this if your .env is in the project root; change if needed
+  } catch (Exception $e) {
+      error_log($e->getMessage());
+  }
+  $paystackSecretKey = $_ENV['PAYSTACK_SECRET_KEY'] ?? null;
+  if (!$paystackSecretKey) {
+      error_log("PAYSTACK_SECRET_KEY missing");
+      die("Payment configuration error.");
+  }
 
-  // Redirect to the Paystack payment link
-  $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
-  header("Location: $paymentLink");
+  // Read amount in GHS (major unit) from env
+  $amountMajor = (float) ($_ENV['PAYSTACK_AMOUNT_GHS'] ?? 2.00); // e.g. 50.00 GHS
+  // Convert to pesewas (smallest unit) — MUST be an integer
+  $amountPesewas = (int) round($amountMajor * 100);
+
+  // currency (GHS)
+  $currency = $_ENV['PAYSTACK_CURRENCY'] ?? 'GHS';
+
+  $initializeUrl = "https://api.paystack.co/transaction/initialize";
+  $callbackUrl = "https://safohallpentvars.com/includes/verify-payment.php"; // <-- keep your real verify URL
+
+  $payload = [
+      'email' => $email,
+      'amount' => $amountPesewas,          // <- FIXED: use $amountPesewas
+      'reference' => $reference,
+      'currency' => $currency,
+      'callback_url' => $callbackUrl
+  ];
+
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $initializeUrl);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+  curl_setopt($ch, CURLOPT_HTTPHEADER, [
+      "Authorization: Bearer $paystackSecretKey",
+      "Content-Type: application/json",
+  ]);
+  $resp = curl_exec($ch);
+  if ($resp === false) {
+      error_log("Paystack init cURL error: " . curl_error($ch));
+      die("Payment initialization error.");
+  }
+  curl_close($ch);
+
+  $init = json_decode($resp, true);
+  if (!isset($init['status']) || $init['status'] !== true) {
+      error_log("Paystack init failed: " . json_encode($init));
+      // developer-friendly: give the init response when debugging (remove for production)
+      die("Payment initialization failed. Response: " . htmlspecialchars($resp));
+  }
+
+  $authUrl = $init['data']['authorization_url'] ?? null;
+  if (!$authUrl) {
+      die("Payment gateway error.");
+  }
+
+  header("Location: $authUrl");
   exit;
 }
+
 ?>
 <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css" />
 <link rel="stylesheet" href="css/style.css" />
