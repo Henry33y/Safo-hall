@@ -93,6 +93,7 @@ if ($result && $result['status'] && $result['data']['status'] == 'success') {
         $parentContact = $formData['parent_contact'];
         $disability = $formData['disability'] ?? 'None';
         $scholarshipSpecify = $formData['scholarship'] ?? 'None';
+        $area = $formData['area'] ?? 'None';
         $roomNumber = $formData['room_number'];
 
         // Save to the database
