@@ -12,6 +12,39 @@ try {
     die($e->getMessage());
 }
 
+// DEBUG: paste immediately after session_start() in verify-payment.php
+echo "<h3>SESSION DEBUG</h3>";
+echo "Session ID: " . session_id() . "<br>";
+
+$savePath = ini_get('session.save_path') ?: sys_get_temp_dir();
+echo "session.save_path: " . htmlspecialchars($savePath) . "<br>";
+
+$sessionName = session_name();
+echo "session.name: " . htmlspecialchars($sessionName) . "<br>";
+echo "<pre>\$_SESSION keys:\n";
+print_r(array_keys($_SESSION));
+echo "</pre>";
+
+// Show raw session file contents (if PHP uses files)
+$fn = rtrim($savePath, '/\\') . DIRECTORY_SEPARATOR . "sess_" . session_id();
+echo "Expected session file: " . htmlspecialchars($fn) . "<br>";
+if (file_exists($fn)) {
+    echo "<h4>Session file exists — size: " . filesize($fn) . " bytes</h4>";
+    echo "<pre>RAW contents:\n" . htmlspecialchars(file_get_contents($fn)) . "</pre>";
+} else {
+    echo "<h4>Session file does NOT exist (file not found)</h4>";
+}
+
+// php.ini relevant values
+echo "<h4>Session ini values</h4><pre>";
+echo "session.gc_maxlifetime = " . ini_get('session.gc_maxlifetime') . "\n";
+echo "session.save_handler = " . ini_get('session.save_handler') . "\n";
+echo "session.cookie_lifetime = " . ini_get('session.cookie_lifetime') . "\n";
+echo "</pre>";
+
+exit; // stop further processing so you can see the debug
+
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
