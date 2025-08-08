@@ -73,28 +73,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Store form data in the session or a temporary table to retrieve after payment
   $_SESSION['form_data'] = $_POST;
   // var_dump($_POST);
+  session_write_close();
 
   // Redirect to the Paystack payment link
   $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
   echo "<script>window.location.href='$paymentLink'</script>";
   exit;
-
-
-  if ($isSuccess['success']) {
-    // require_once __DIR__ . '/successMessage.php';
-    // Send SMS notification
-    $message = "Dear $firstName, your registration was successful. Your room number is $roomNumber. Welcome to SAFO HALL.";
-    $response = sendSms($contact, $message);
-    if ($response) {
-      // var_dump("SMS notification sent: $response");
-      error_log("SMS notification sent: $response");
-    } else {
-      error_log("Failed to send SMS notification.");
-    }
-    echo "<script>window.location.href='success.php'</script>";
-  } else {
-    displayErrorToast($isSuccess['error']);
-  }
 }
 ?>
 <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css" />
