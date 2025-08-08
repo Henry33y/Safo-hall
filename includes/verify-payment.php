@@ -2,8 +2,8 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once __DIR__.'/db_conn.php';
 require_once __DIR__. '/session.php';
+require_once __DIR__.'/db_conn.php';
 require_once __DIR__.'/loadenv.php';
 require_once __DIR__.'/sms_config.php';
 try {
@@ -130,7 +130,10 @@ if ($result && $result['status'] && $result['data']['status'] == 'success') {
         }
         unset($_SESSION['form_data']);
     } else {
-        echo "No form data found.";
+        echo "No form data found. Session ID: " . session_id();
+        echo "<pre>_COOKIE:\n";
+        print_r($_COOKIE);
+        echo "</pre>";
     }
 } else {
     // Payment failed

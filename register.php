@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   // Redirect to the Paystack payment link
   $paymentLink = "https://paystack.com/pay/safohallpentvars"; // Replace with your Paystack link
-  echo "<script>window.location.href='$paymentLink'</script>";
+  header("Location: $paymentLink");
   exit;
 }
 ?>
