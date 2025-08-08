@@ -6,7 +6,6 @@ $title = 'Register | Safo Hall Pentvars';
 
 require_once 'includes/session.php';
 // session_destroy();
-require_once 'includes/header.php';
 require_once 'includes/db_conn.php';
 require_once 'includes/sms_config.php';
 require_once 'includes/errorToast.php';
@@ -137,8 +136,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   curl_setopt($ch, CURLOPT_HTTPHEADER, [
       "Authorization: Bearer $paystackSecretKey",
       "Content-Type: application/json",
-  ]);
-  $resp = curl_exec($ch);
+    ]);
+    $resp = curl_exec($ch);
   if ($resp === false) {
       error_log("Paystack init cURL error: " . curl_error($ch));
       die("Payment initialization error.");
@@ -160,6 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   header("Location: $authUrl");
   exit;
 }
+require_once 'includes/header.php';
 
 ?>
 <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css" />
